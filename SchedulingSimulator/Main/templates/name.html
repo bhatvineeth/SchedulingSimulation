@@ -2,11 +2,10 @@
 <html>
 <head>
     <title>NAME</title>
-    <script type="text/javascript" src="https://cdnjs.com/libraries/Chart.js"></script>
+    <script src="{% static 'js/chart.js/dist/Chart.js' %}"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
 </head>
 <body>
 <p>
@@ -20,7 +19,6 @@
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
 var ctx = document.getElementById('myChart');
-Chart.platform.disableCSSInjection = true;
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -58,7 +56,6 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
-
 </body>
 
 </html>
