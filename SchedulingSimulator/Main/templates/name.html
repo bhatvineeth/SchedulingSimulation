@@ -3,7 +3,6 @@
 <head>
     <title>NAME</title>
     <script src="{% static 'js/chart.js/dist/Chart.js' %}"></script>
-    <script src="{% static 'js/color-name/index.js' %}"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'js/chart.js/dist/Chart.css' %}">
@@ -13,7 +12,9 @@
     TEST
 </p>
 
-<!-- TODO : drawPoint method in Chart.js switch, default method -->
+<!-- TODO : passing the radius to drawpoint() dynamically,
+            Graph adjustment,
+            define the i/p & o/p, color, label for the chart dynamically-->
 
 <form action="/your-name/" method="post">
     {% csrf_token %}
@@ -30,14 +31,16 @@ var scatterChart = new Chart(ctx, {
     data: {
         datasets: [{
             label: 'Scatter Dataset',
-            borderColor: module.exports.red,
-            data: [{x: 5,y: 0}, {x: 8,y: 0}, {
+            borderColor: '#ff6384',
+            backgroundColor: '#ff6384',
+            data: [{x: 5,y: 1}, {x: 8,y: 1}, {
                 x: 6,
-                y: 0
+                y: 1
             }]
         },{
         label: 'Scatter',
-        borderColor: module.exports.blue,
+        borderColor: '#36a2eb',
+        backgroundColor: '#36a2eb',
             data: [{
                 x: 1,
                 y: 1
