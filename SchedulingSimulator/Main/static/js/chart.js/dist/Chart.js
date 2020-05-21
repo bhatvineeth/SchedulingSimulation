@@ -2827,7 +2827,7 @@ var exports$1 = {
 		case 'rect':
 			if (!rotation) {
 				size = Math.SQRT1_2 * radius;
-				ctx.rect(x - size, y - size, 2 * size, 2 * size);
+				ctx.rect(x, y, 2 * size, 2 * size);
 				break;
 			}
 			rad += QUARTER_PI;
@@ -4427,14 +4427,14 @@ var defaultColor$1 = core_defaults.global.defaultColor;
 core_defaults._set('global', {
 	elements: {
 		point: {
-			radius: 3,
-			pointStyle: 'circle',
+			radius: 50,
+			pointStyle: 'rect',
 			backgroundColor: defaultColor$1,
 			borderColor: defaultColor$1,
 			borderWidth: 1,
 			// Hover
-			hitRadius: 1,
-			hoverRadius: 4,
+			hitRadius: 50,
+			hoverRadius: 50,
 			hoverBorderWidth: 1
 		}
 	}
