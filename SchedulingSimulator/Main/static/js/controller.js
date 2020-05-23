@@ -1,5 +1,3 @@
-controller {
-
     function generateGraph() {
         var startingPoints = [0,2,10,15,23,25,28,30,38,45,50,53,56,60,68];
         var tasks = [0,2,0,2,0,1,0,2,0,2,1,2,0,2,0,];
@@ -43,7 +41,7 @@ controller {
             temp['catergoryPercentage'] = 1;
             temp['barPercentage'] = 1.2;
             temp['barThickness'] = 'flex';
-            temp['label'] = 'Task No ' + (i+1).toString() ' : ';
+            temp['label'] = 'Task ' + (i+1).toString();
             temp['backgroundColor'] = '#ff6384';
             temp['data'] = data[i];
             dataSet.push(temp);
@@ -75,5 +73,3 @@ controller {
             }
         });
     };
-
-};
