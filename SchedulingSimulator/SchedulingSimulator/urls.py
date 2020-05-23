@@ -19,7 +19,7 @@ from Main.views import openIndex, submitData, get_name
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_name),
+    path('', openIndex),
     path('submitData/', submitData),
     path('your-name/', get_name),
 
