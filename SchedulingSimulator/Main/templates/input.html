@@ -1,10 +1,13 @@
 {% load static %}
 <html>
+
 <head>
-<script src="{% static 'js/controller.js' %}"></script>
-<script> var i = 1; </script>
-<style>
-			input {
+	<script src="{% static 'js/controller.js' %}"></script>
+	<script>
+		var i = 1;
+	</script>
+	<style>
+		input {
  				width: 100%;
 			}
 			input[type=text] {
@@ -35,31 +38,42 @@
   				background-color: #4CAF50;
   				color: white;
 			}
-
-
-		</style>
+	</style>
 </head>
-<body>
-<div id="wrapper">
-	<form action="/submitInput/" method="post">
-        {% csrf_token %}
-        {{ form }}
-<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
-<tr>
-<th>Task</th>
-<th>Arrival Time</th>
-<th>Execution Time</th>
-</tr>
-<tr>
-<td id="task">1</td>
-<td><input type="text" id="arrival_time"></td>
-<td><input type="text" id="exec_time"></td>
-<td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
-</tr>
-</table>
-    <input type="submit" value="Submit" onclick="submitData()">
-    </form>
-</div>
 
+<body>
+	<div id="wrapper">
+		<form action="/submitInput/" method="post">{% csrf_token %} {{ form }}
+			<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+				<tr>
+					<th>Task</th>
+					<th>Arrival Time</th>
+					<th>Execution Time</th>
+                    <th>Period</th>
+                    <th>Deadline</th>
+				</tr>
+				<tr>
+					<td id="task">1</td>
+					<td>
+						<input type="text" id="arrival_time">
+					</td>
+					<td>
+						<input type="text" id="exec_time">
+					</td>
+					<td>
+						<input type="text" id="period">
+					</td>
+					<td>
+						<input type="text" id="deadline">
+					</td>
+					<td>
+						<input type="button" class="add" onclick="add_row();" value="Add Row">
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit" onclick="submitData()">
+		</form>
+	</div>
 </body>
+
 </html>

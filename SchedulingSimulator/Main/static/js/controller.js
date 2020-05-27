@@ -94,14 +94,20 @@
          //var name=document.getElementById("name_row"+no);
          var arrival=document.getElementById("arrival_row"+no);
          var exec=document.getElementById("exec_row"+no);
+          var perioD=document.getElementById("period_row"+no);
+         var deadLine=document.getElementById("deadline_row"+no);
 
          var name_data=name.innerHTML;
          var arrival_data=arrival.innerHTML;
          var exec_data=exec.innerHTML;
+         var period_data=perioD.innerHTML;
+         var deadline_data=deadLine.innerHTML;
 
          //name.innerHTML="<input type='text' id='name_text"+no+"' value='"+name_data+"'>";
          arrival.innerHTML="<input type='text' id='arrival_text"+no+"' value='"+arrival_data+"'>";
          exec.innerHTML="<input type='text' id='exec_text"+no+"' value='"+exec_data+"'>";
+         perioD.innerHTML="<input type='text' id='period_text"+no+"' value='"+period_data+"'>";
+         deadLine.innerHTML="<input type='text' id='deadline_text"+no+"' value='"+deadline_data+"'>";
         }
 
 
@@ -110,10 +116,14 @@
          //var name_val=document.getElementById("name_text"+no).value;
          var arrival_val=document.getElementById("arrival_text"+no).value;
          var exec_val=document.getElementById("exec_text"+no).value;
+         var period_val=document.getElementById("period_text"+no).value;
+         var deadline_val=document.getElementById("deadline_text"+no).value;
 
          //document.getElementById("name_row"+no).innerHTML=name_val;
          document.getElementById("arrival_row"+no).innerHTML=arrival_val;
          document.getElementById("exec_row"+no).innerHTML=exec_val;
+          document.getElementById("period_row"+no).innerHTML=period_val;
+         document.getElementById("deadline_row"+no).innerHTML=deadline_val;
 
          document.getElementById("edit_button"+no).style.display="block";
          document.getElementById("save_button"+no).style.display="none";
@@ -136,20 +146,24 @@
 
          var arrival_time=document.getElementById("arrival_time").value;
          var exec_time=document.getElementById("exec_time").value;
-        if (arrival_time == '' || exec_time == '') {
+         var period=document.getElementById("period").value;
+         var deadline=document.getElementById("deadline").value;
+        if (arrival_time == '' || exec_time == '' || period == '' || deadline == '') {
             alert("Invaid Input")
             return false;
         }
 
          var table=document.getElementById("data_table");
          var table_len=(table.rows.length)-1;
-         var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='arrival_row"+table_len+"'>"+arrival_time+"</td><td id='exec_row"+table_len+"'>"+exec_time+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+         var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='arrival_row"+table_len+"'>"+arrival_time+"</td><td id='exec_row"+table_len+"'>"+exec_time+"</td><td id='period_row"+table_len+"'>"+period+"</td><td id='deadline_row"+table_len+"'>"+deadline+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
 
         i= i + 1
 
         document.getElementById("task").innerHTML=i;
          document.getElementById("arrival_time").value="";
          document.getElementById("exec_time").value="";
+         document.getElementById("period").value="";
+         document.getElementById("deadline").value="";
         }
 
         function submitData() {
