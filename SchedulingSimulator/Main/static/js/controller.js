@@ -137,12 +137,13 @@
          for (i = 1; i < len ; i++) {
             document.getElementById("data_table").rows[i].cells[0].innerHTML = i;
          }
+         ri = len-1;
         }
 
 
         function add_row()
         {
-         var new_name=i;
+            var new_name = ri;
 
          var arrival_time=document.getElementById("arrival_time").value;
          var exec_time=document.getElementById("exec_time").value;
@@ -155,11 +156,11 @@
 
          var table=document.getElementById("data_table");
          var table_len=(table.rows.length)-1;
-         var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='arrival_row"+table_len+"'>"+arrival_time+"</td><td id='exec_row"+table_len+"'>"+exec_time+"</td><td id='period_row"+table_len+"'>"+period+"</td><td id='deadline_row"+table_len+"'>"+deadline+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+         var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='exec_row"+table_len+"'>"+exec_time+"</td><td id='period_row"+table_len+"'>"+period+"</td><td id='deadline_row"+table_len+"'>"+deadline+"</td><td id='arrival_row"+table_len+"'>"+arrival_time+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'><input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'><input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
 
-        i= i + 1
+        ri = ri+1;
 
-        document.getElementById("task").innerHTML=i;
+        document.getElementById("task").innerHTML=ri;
          document.getElementById("arrival_time").value="";
          document.getElementById("exec_time").value="";
          document.getElementById("period").value="";

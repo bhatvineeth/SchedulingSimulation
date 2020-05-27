@@ -4,7 +4,7 @@
 <head>
 	<script src="{% static 'js/controller.js' %}"></script>
 	<script>
-		var i = 1;
+		var ri = 1;
 	</script>
 	<style>
 		input {
@@ -47,24 +47,24 @@
 			<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
 				<tr>
 					<th>Task</th>
-					<th>Arrival Time</th>
-					<th>Execution Time</th>
+                    <th>Execution Time</th>
                     <th>Period</th>
                     <th>Deadline</th>
+					<th>Arrival Time</th>
 				</tr>
 				<tr>
 					<td id="task">1</td>
-					<td>
-						<input type="text" id="arrival_time">
-					</td>
-					<td>
+                    <td>
 						<input type="text" id="exec_time">
 					</td>
-					<td>
+                    <td>
 						<input type="text" id="period">
 					</td>
-					<td>
+                    <td>
 						<input type="text" id="deadline">
+					</td>
+					<td>
+						<input type="text" id="arrival_time">
 					</td>
 					<td>
 						<input type="button" class="add" onclick="add_row();" value="Add Row">
