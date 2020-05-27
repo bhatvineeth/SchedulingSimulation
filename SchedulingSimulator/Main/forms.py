@@ -1,4 +1,9 @@
 from django import forms
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
+class UserCreationForm(forms.Form):
+    final_array = forms.CharField(widget=forms.HiddenInput())
+
+
+
+
+
