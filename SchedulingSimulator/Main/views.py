@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_protect
 from .forms import UserCreationForm
+from Main import edf
+
 from django.template import RequestContext
 
 # Create your views here.
@@ -20,7 +22,8 @@ def openIndex(request):
 @csrf_protect
 def submitInput(request):
     final_array = request.POST.get('final_array')
-    print(final_array)
+    algorithmInputArray = arraySplit(final_array)
+    edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
     #TODO CALL ALGORITHM
     return render(request, 'index.html', {})
 
@@ -44,6 +47,15 @@ def get_name(request):
         form = UserCreationForm()
 
     return render(request, 'name.html', {'form': form})
+
+def arraySplit(algorithmInputs):
+    algorithmInputs = algorithmInputs[:-1]
+    algorithmInputs = algorithmInputs.split("|")
+    algorithmInputArray = []
+    for algorithmInput in algorithmInputs:
+        algorithmInput = algorithmInput[:-1]
+        algorithmInputArray.append(list(map(int, algorithmInput.split(",", -1))))
+    return algorithmInputArray
 
 
 
