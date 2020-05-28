@@ -42,9 +42,9 @@
         return tasksDataset;
     }
 
-    function createGraph(canvasID, title) {
+    function createGraph(canvasID, title, schedulingArray) {
         var labels = [];
-        var data = generateGraph(edfArray);
+        var data = generateGraph(schedulingArray);
         var dataSet = [];
         var set = {};
         var i;

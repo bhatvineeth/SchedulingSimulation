@@ -14,6 +14,12 @@ def earliestDeadlineFirstAlgorithm(tasks):
     #    tasks[i].append(int(input()))
     #    print("Please Enter the Arrival time of task:", i + 1)
     #    tasks[i].append(int(input()))
+    tasks.sort(key=lambda x: x[2])
+    i = 0
+    for task in tasks:
+        i = i + 1
+        task[0] = i
+
 
     print(tasks)
 

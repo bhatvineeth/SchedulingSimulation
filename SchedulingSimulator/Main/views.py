@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_protect
 from .forms import UserCreationForm
-from Main import edf
+from Main import edf, rms
 
 from django.template import RequestContext
 
@@ -26,7 +26,9 @@ def submitInput(request):
     noOfTasks = request.POST.get('noOfTasks')
     algorithmInputArray = arraySplit(final_array)
     edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
-    return render(request, 'index.html', {'edfArray': edfArray, 'interval': interval, 'noOfTasks': noOfTasks})
+    rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
+    rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
+    return render(request, 'index.html', {'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks})
 
 # TODO: Stay on same page when form submits
 def get_name(request):
@@ -59,5 +61,11 @@ def arraySplit(algorithmInputs):
     return algorithmInputArray
 
 
-
-
+def rmsInputArrayCreator(algorithmInputs):
+    rmsInputArray = []
+    for algorithmInput in algorithmInputs:
+        taskArray = []
+        taskArray.append(algorithmInput[1])
+        taskArray.append(algorithmInput[2])
+        rmsInputArray.append(taskArray)
+    return  rmsInputArray

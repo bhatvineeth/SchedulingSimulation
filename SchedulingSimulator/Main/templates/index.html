@@ -5,6 +5,7 @@
 
     <script>
         edfArray = {{ edfArray }}
+        rmsArray = {{ rmsArray }}
         interval = {{ interval }}
         noOfTasks = {{ noOfTasks }}
     </script>
@@ -33,8 +34,8 @@
 <br>
 <hr>
 <script>
-createGraph('myChart','Rate Monotonic');
-createGraph('myChart2','Earliest Dead First');
+createGraph('myChart','Rate Monotonic',rmsArray);
+createGraph('myChart2','Earliest Dead First',edfArray);
 </script>
 </body>
 
