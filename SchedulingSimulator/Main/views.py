@@ -22,10 +22,11 @@ def openIndex(request):
 @csrf_protect
 def submitInput(request):
     final_array = request.POST.get('final_array')
+    interval = request.POST.get('interval')
+    noOfTasks = request.POST.get('noOfTasks')
     algorithmInputArray = arraySplit(final_array)
-    edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
-    #TODO CALL ALGORITHM
-    return render(request, 'index.html', {})
+    resultArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
+    return render(request, 'index.html', {'resultArray': resultArray, 'interval': interval, 'noOfTasks': noOfTasks})
 
 # TODO: Stay on same page when form submits
 def get_name(request):

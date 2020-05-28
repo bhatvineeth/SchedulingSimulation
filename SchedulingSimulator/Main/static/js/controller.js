@@ -9,12 +9,19 @@
 		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
 		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
-
+    var lcm = 0;
     function generateGraph() {
-        var startingPoints = [0,2,10,15,23,25,28,30,38,45,50,53,56,60,68];
-        var tasks = [0,2,0,2,0,1,0,2,0,2,1,2,0,2,0,];
-        var lcm = 75;
-        var noOfTasks = 2
+        console.log(resultArray);
+        var timeLineLength = resultArray[0].length;
+        var startingPoints = resultArray[0];
+        var tasks = resultArray[1];
+        if (interval == 0) {
+            lcm = resultArray[0][timeLineLength - 1];
+        } else {
+            lcm = interval;
+            tasks = tasks.slice(0, lcm+2);
+            startingPoints = startingPoints.slice(0, lcm+2);
+        }
         var i =0;
         var j;
         var tasksDataset = new Array(noOfTasks);
@@ -37,8 +44,6 @@
     }
 
     function createGraph(canvasID, title) {
-        var noOfTasks = 2;
-        var lcm = 75;
         var labels = [];
         var data = generateGraph();
         var dataSet = [];
@@ -185,6 +190,8 @@
             }
             document.getElementById("id_final_array").innerHTML = final_array;
             document.getElementById("id_final_array").value=final_array;
+            document.getElementById("id_noOfTasks").innerHTML = document.getElementById("data_table").rows.length - 2
+            document.getElementById("id_noOfTasks").value = document.getElementById("data_table").rows.length - 2
         }
 
 
