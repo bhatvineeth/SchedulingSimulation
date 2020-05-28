@@ -10,13 +10,12 @@
 		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
     var lcm = 0;
-    function generateGraph() {
-        console.log(resultArray);
-        var timeLineLength = resultArray[0].length;
-        var startingPoints = resultArray[0];
-        var tasks = resultArray[1];
+    function generateGraph(dataArray) {
+        var timeLineLength = dataArray[0].length;
+        var startingPoints = dataArray[0];
+        var tasks = dataArray[1];
         if (interval == 0) {
-            lcm = resultArray[0][timeLineLength - 1];
+            lcm = dataArray[0][timeLineLength - 1];
         } else {
             lcm = interval;
             tasks = tasks.slice(0, lcm+2);
@@ -45,7 +44,7 @@
 
     function createGraph(canvasID, title) {
         var labels = [];
-        var data = generateGraph();
+        var data = generateGraph(edfArray);
         var dataSet = [];
         var set = {};
         var i;

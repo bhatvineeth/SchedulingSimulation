@@ -25,8 +25,8 @@ def submitInput(request):
     interval = request.POST.get('interval')
     noOfTasks = request.POST.get('noOfTasks')
     algorithmInputArray = arraySplit(final_array)
-    resultArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
-    return render(request, 'index.html', {'resultArray': resultArray, 'interval': interval, 'noOfTasks': noOfTasks})
+    edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
+    return render(request, 'index.html', {'edfArray': edfArray, 'interval': interval, 'noOfTasks': noOfTasks})
 
 # TODO: Stay on same page when form submits
 def get_name(request):
