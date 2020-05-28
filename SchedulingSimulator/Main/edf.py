@@ -133,17 +133,28 @@ def earliestDeadlineFirstAlgorithm(tasks):
         mn = 0
         mx = 0
 
+        startingPoints = []
+        tasksArray = []
+        resultArray = []
         for i in range(lcm):
             if i > 0 and timeLine[i] != timeLine[i - 1]:
+                startingPoints.append(mn)
+                tasksArray.append(timeLine[i - 1])
                 mx = i
                 print(mn, "", mx, "", "[" + str(timeLine[i - 1]) + "]")
                 mn = i
             if i == lcm - 1:
                 mx = lcm
                 print(mn, "", mx, "", "[" + str(timeLine[i]) + "]")
+                tasksArray.append(timeLine[i])
+                startingPoints.append(mn)
+                startingPoints.append(mx)
 
-        print()
-        print()
+        #print()
+        #print()
 
-        for i in range(len(instances)):
-            print(instances[i])
+        #for i in range(len(instances)):
+        #    print(instances[i])
+        resultArray.append(startingPoints)
+        resultArray.append(tasksArray)
+        return(resultArray)
