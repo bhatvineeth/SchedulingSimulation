@@ -1,5 +1,7 @@
 def earliestDeadlineFirstAlgorithm(tasks):
-    #tasks = []
+    logFile = open("log/EDF.log", "w+")
+    print("EARLIEST DEADLINE FIRST: START\n", file=logFile)
+    #tasks = [
     #print("Please Enter the number of tasks:")
     #n = int(input())
     n = len(tasks)
@@ -28,10 +30,10 @@ def earliestDeadlineFirstAlgorithm(tasks):
     for i in range(n):
         u += float(tasks[i][1] / tasks[i][2])
 
-    print("Utilization: ", u)
+    print("Utilization: ", u, file=logFile)
 
     if u > 1:
-        print("The tasks are not feasible")
+        print("The tasks are not feasible", file=logFile)
 
     else:
 
@@ -40,7 +42,7 @@ def earliestDeadlineFirstAlgorithm(tasks):
         for i in range(n):
             temp_p.append(tasks[i][2])
 
-        print(temp_p)
+        print(temp_p, file=logFile)
         i = 2
         while i <= max(temp_p):
             counter = 0
@@ -54,7 +56,7 @@ def earliestDeadlineFirstAlgorithm(tasks):
             else:
                 i += 1
 
-        print("LCM: ", lcm)
+        print("LCM: ", lcm, file=logFile)
 
         i = 0
         instances = []
@@ -68,7 +70,7 @@ def earliestDeadlineFirstAlgorithm(tasks):
                     break
 
         for i in range(len(instances)):
-            print(instances[i])
+            print(instances[i], file=logFile)
 
         for i in range(len(instances)):
             tmp = instances[i].copy()
@@ -78,11 +80,11 @@ def earliestDeadlineFirstAlgorithm(tasks):
                 k -= 1
             instances[k] = tmp.copy()
 
-        print()
-        print()
+        print('', file=logFile)
+        print('', file=logFile)
 
         for i in range(len(instances)):
-            print(instances[i])
+            print(instances[i], file=logFile)
 
         timeLeft = []
 
@@ -133,8 +135,8 @@ def earliestDeadlineFirstAlgorithm(tasks):
 
             time += 1
 
-        print()
-        print()
+        print('', file=logFile)
+        print('', file=logFile)
 
         mn = 0
         mx = 0
@@ -147,11 +149,11 @@ def earliestDeadlineFirstAlgorithm(tasks):
                 startingPoints.append(mn)
                 tasksArray.append(timeLine[i - 1])
                 mx = i
-                print(mn, "", mx, "", "[" + str(timeLine[i - 1]) + "]")
+                print(mn, "", mx, "", "[" + str(timeLine[i - 1]) + "]", file=logFile)
                 mn = i
             if i == lcm - 1:
                 mx = lcm
-                print(mn, "", mx, "", "[" + str(timeLine[i]) + "]")
+                print(mn, "", mx, "", "[" + str(timeLine[i]) + "]", file=logFile)
                 tasksArray.append(timeLine[i])
                 startingPoints.append(mn)
                 startingPoints.append(mx)
@@ -163,4 +165,5 @@ def earliestDeadlineFirstAlgorithm(tasks):
         #    print(instances[i])
         resultArray.append(startingPoints)
         resultArray.append(tasksArray)
+        print("EARLIEST DEADLINE FIRST: END\n\n\n", file=logFile)
         return(resultArray)

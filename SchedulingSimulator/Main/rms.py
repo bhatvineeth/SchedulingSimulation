@@ -1,7 +1,7 @@
 import math
 
 
-def printSequence(processes, n):
+def printSequence(processes, n, logFile):
     execution = []
     startingPoints = []
     tasksArray = []
@@ -36,11 +36,11 @@ def printSequence(processes, n):
 
     for i in range(0, LCM):
         if Result[i] != - 1:
-            #print("From% d to% d: p% d " % (i, i + 1, Result[i]))
+            print("From% d to% d: p% d " % (i, i + 1, Result[i]), file=logFile)
             startingPoints.append(i)
             tasksArray.append(Result[i])
         else:
-            #print(" From% d to% d: Empty slot " % (i, i + 1))
+            print(" From% d to% d: Empty slot " % (i, i + 1) , file=logFile)
             tasksArray.append(0)
 
     startingPoints.append(i + 1)
@@ -49,6 +49,8 @@ def printSequence(processes, n):
     return resultArray
 
 def rateMonotonicScheduling(processes):
+    logFile = open("log/RMS.log", "w+")
+    print("RATE MONOTONIC SCHEDULING: START\n", file=logFile)
     finalArray = []
     #n = input(" Enter No. of processes: ")
     n = len(processes)
@@ -62,16 +64,16 @@ def rateMonotonicScheduling(processes):
         #pair.append(int(Period))
         #processes.append(pair)
     processes.sort(key=lambda x: x[1])
-    print(processes)
+    print(processes, file=logFile)
     u = 0
     for j in range(0, n):
         u = u + processes[j][0] / float(processes[j][1])
-    print("Utilization:% f" % (u))
+    print("Utilization:% f" % (u), file=logFile)
     if u <= 1:
         Ub = n * (pow(2, 1 / float(n)) - 1)
         if u <= Ub:
-            print("processes are schedulable")
-            finalArray = printSequence(processes, n)
+            print("processes are schedulable", file=logFile)
+            finalArray = printSequence(processes, n, logFile)
         else:
             ind = 0
             ind1 = 0
@@ -96,13 +98,13 @@ def rateMonotonicScheduling(processes):
                         R = R1
                         R1 = processes[k][0]
                 if ind == 1:
-                    print("Processes are not schedulable since processes% d can't meet deadline" % (ind1))
+                    print("Processes are not schedulable since processes% d can't meet deadline" % (ind1), file=logFile)
                     success = 0
                     break
             if success == 1:
-                print("processes are schedulable")
-                finalArray = printSequence(processes, n)
+                print("processes are schedulable", file=logFile)
+                finalArray = printSequence(processes, n, logFile)
     else:
-        print("processes are not schedulable")
-
+        print("processes are not schedulable", file=logFile)
+    print("RATE MONOTONIC SCHEDULING: ENDn\n\n\n", file=logFile)
     return finalArray
