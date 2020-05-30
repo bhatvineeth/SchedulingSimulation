@@ -42,7 +42,7 @@
         return tasksDataset;
     }
 
-    function createGraph(canvasID, title, schedulingArray) {
+    function createGraph(canvasID, title, schedulingArray, inputArray) {
         var labels = [];
         var data = generateGraph(schedulingArray);
         var dataSet = [];
@@ -53,11 +53,12 @@
             axisLabel.push(i.toString());
         }
         for (i = 0; i < noOfTasks ; i++) {
+            var inputTask = '['+inputArray[i][0] +', '+inputArray[i][1]+', '+ inputArray[i][2]+', '+inputArray[i][3]+']';
             var temp = {};
             temp['catergoryPercentage'] = 1;
             temp['barPercentage'] = 1.2;
             temp['barThickness'] = 'flex';
-            temp['label'] = 'Task ' + (i+1).toString();
+            temp['label'] = 'Task ' + (i+1).toString() + inputTask;
             temp['backgroundColor'] = colors[i];
             temp['data'] = data[i];
             dataSet.push(temp);

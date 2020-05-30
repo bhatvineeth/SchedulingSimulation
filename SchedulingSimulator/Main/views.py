@@ -28,7 +28,8 @@ def submitInput(request):
     edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
     rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
     rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
-    return render(request, 'index.html', {'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks})
+    algorithmInputArray = returnInputArray(algorithmInputArray)
+    return render(request, 'index.html', {'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks, 'algorithmInputArray': algorithmInputArray})
 
 # TODO: Stay on same page when form submits
 def get_name(request):
@@ -69,3 +70,9 @@ def rmsInputArrayCreator(algorithmInputs):
         taskArray.append(algorithmInput[2])
         rmsInputArray.append(taskArray)
     return  rmsInputArray
+
+def returnInputArray(algorithmInputArray):
+    algorithmInputArray.sort(key=lambda x: x[2])
+    for inputArray in algorithmInputArray:
+        inputArray[1:]
+    return algorithmInputArray

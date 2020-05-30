@@ -8,6 +8,7 @@
         rmsArray = {{ rmsArray }}
         interval = {{ interval }}
         noOfTasks = {{ noOfTasks }}
+        algorithmInputArray = {{ algorithmInputArray }}
     </script>
 
   <script src="{% static 'js/controller.js' %}"></script>
@@ -34,8 +35,8 @@
 <br>
 <hr>
 <script>
-createGraph('myChart','Rate Monotonic',rmsArray);
-createGraph('myChart2','Earliest Dead First',edfArray);
+createGraph('myChart','Rate Monotonic',rmsArray, algorithmInputArray);
+createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 </script>
 </body>
 
