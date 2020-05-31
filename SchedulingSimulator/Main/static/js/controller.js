@@ -40,6 +40,57 @@
             }
         }
         return tasksDataset;
+
+    }
+
+    function generateLineGraph(dataArray) {
+        var timeLineLength = dataArray[0].length;
+        var startingPoints = dataArray[0];
+        var tasks = dataArray[1];
+        if (interval == 0) {
+            lcm = dataArray[0][timeLineLength - 1];
+        } else {
+            lcm = interval;
+            tasks = tasks.slice(0, lcm+2);
+            startingPoints = startingPoints.slice(0, lcm+2);
+        }
+        var i =0;
+        var j;
+        var tasksDataset = new Array(noOfTasks);
+        for (i =0 ; i < noOfTasks; i++) {
+            tasksDataset[i] = new Array(lcm).fill(0);
+        }
+        for (i = 0; i < startingPoints.length ; i++){
+            var start = startingPoints[i]
+            var end = startingPoints[i+1]
+            var taskNo = tasks[i]
+
+            if (taskNo > 0) {
+                taskNo = taskNo - 1
+                for (j = start; j < end ; j++) {
+                    tasksDataset[taskNo][j] = 1;
+                }
+            }
+        }
+        var xaxisLength = 0;
+        var points = new Array(noOfTasks);
+        for (i =0; i < tasksDataset.length; i++) {
+            tasks = tasksDataset[i];
+            points[i] = [];
+            for (j = 0; j < tasks.length ; j++) {
+                var point = {};
+                point['x'] = j;
+                if (tasks[j] == 1) {
+                    point['y'] = xaxisLength + 0.5;
+                } else {
+                    point['y'] = xaxisLength;
+                }
+                points[i].push(point);
+            }
+            xaxisLength = xaxisLength + 1;
+        }
+        return points;
+
     }
 
     function createGraph(canvasID, title, schedulingArray, inputArray) {
@@ -97,6 +148,90 @@
                 }
             }
         });
+    };
+
+     function createTable(inputArray) {
+        var table = document.getElementById("data_table");
+        var row = 0;
+        var cell = 0;
+        for (row = 0; row < inputArray.length ; row++) {
+            addRowRefresh(inputArray[row]);
+            ri = ri+1;
+        }
+        var lastRow = table.rows.length;
+        var x = table.rows[table.rows.length-1].cells;
+        x[0].innerHTML = (table.rows.length-1).toString();
+     };
+
+     function addRowRefresh(row) {
+         var new_name = row[0];
+         var arrival_time=row[4];
+         var exec_time=row[1];
+         var period=row[2];
+         var deadline=row[3];
+
+         var table=document.getElementById("data_table");
+         var table_len=(table.rows.length)-1;
+         var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='exec_row"+table_len+"'>"+exec_time+"</td><td id='period_row"+table_len+"'>"+period+"</td><td id='deadline_row"+table_len+"'>"+deadline+"</td><td id='arrival_row"+table_len+"'>"+arrival_time+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'><input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'><input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+
+
+     }
+
+     function createLineGraph(canvasID, title, schedulingArray, inputArray) {
+        var labels = [];
+        var data = generateLineGraph(schedulingArray);
+        var dataSet = [];
+        var set = {};
+        var i;
+        var axisLabel = []
+        for (i = 0; i < lcm ; i++) {
+            axisLabel.push(i.toString());
+        }
+        for (i = 0; i < noOfTasks ; i++) {
+            var inputTask = '['+inputArray[i][0] +', '+inputArray[i][1]+', '+ inputArray[i][2]+', '+inputArray[i][3]+']';
+            var temp = {};
+
+            temp['steppedLine'] = 'steppedLine';
+            temp['label'] = 'Task ' + (i+1).toString() + inputTask;
+            temp['borderColor'] = colors[i];
+            temp['data'] = data[i];
+            temp['fill'] = false;
+            dataSet.push(temp);
+        }
+        var barChartData = {
+             labels: axisLabel,
+             datasets: dataSet
+         };
+        var ctx = document.getElementById(canvasID);
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: barChartData,
+            options: {
+                    legend: {
+                        labels: {
+
+                            fontColor: 'white'
+                        }
+                },
+                title: {
+                    display: true,
+                    text: title,
+                    fontColor: 'white'
+                },
+
+                responsive: true,
+                scales: {
+                    xAxes: [{
+
+                    }],
+                    yAxes: [{
+
+                        display: false,
+                    }]
+
+                }
+            }
+        });
      };
 
      function createTable(inputArray) {
@@ -125,6 +260,7 @@
 
 
      }
+
 
         function edit_row(no)
         {

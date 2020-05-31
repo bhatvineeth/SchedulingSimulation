@@ -159,11 +159,11 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 										<h2 class="card-title">Rate Monotonic</h2> </div>
 									<div class="col-sm-6">
 										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary btn-simple active" id="0">
+											<label class="btn btn-sm btn-primary btn-simple active" id="0" onclick="createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray)">
 												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span> </label>
-											<label class="btn btn-sm btn-primary btn-simple" id="1">
+											<label class="btn btn-sm btn-primary btn-simple" id="1" onclick="createLineGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray)">
 												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span> </label>
@@ -171,9 +171,9 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 									</div>
 								</div>
 							</div>
-							<div style="height:50;">
-								<div>
-									<canvas id="myChart" height="30"></canvas>
+							<div>
+                				<div>
+									<canvas id="myChart" height="100"> </canvas>
 								</div>
 								<!-- <div>
                   <canvas id="myChart2" height="30"></canvas>
@@ -190,11 +190,11 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 										<h2 class="card-title">Earliest Deadline First</h2> </div>
 									<div class="col-sm-6">
 										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary btn-simple active" id="2">
+											<label class="btn btn-sm btn-primary btn-simple active" id="2" onclick="createGraph('myChart2', 'Earliest Dead First', edfArray, algorithmInputArray)">
 												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span> </label>
-											<label class="btn btn-sm btn-primary btn-simple" id="3">
+											<label class="btn btn-sm btn-primary btn-simple" id="3" onclick="createLineGraph('myChart2', 'Earliest Dead First', edfArray, algorithmInputArray)">
 												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span> </label>
@@ -207,7 +207,7 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
                   <canvas id="myChart" height="30" ></canvas>
                 </div>-->
 								<div>
-									<canvas id="myChart2" height="30"></canvas>
+									<canvas id="myChart2" height="100"></canvas>
 								</div>
 							</div>
 						</div>
