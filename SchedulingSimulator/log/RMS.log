@@ -1,0 +1,11 @@
+RATE MONOTONIC SCHEDULING: START
+
+[[1, 2]]
+Utilization: 0.500000
+processes are schedulable
+From 0 to 1: p 1 
+ From 1 to 2: Empty slot 
+RATE MONOTONIC SCHEDULING: ENDn
+
+
+

@@ -18,10 +18,10 @@
 
 </head>
 <body> -->
-
 <!-- TODO : passing the radius to drawpoint() dynamically,
             Graph adjustment,
-            define the i/p & o/p, color, label for the chart dynamically--> <!--
+            define the i/p & o/p, color, label for the chart dynamically-->
+<!--
 <hr>
 <div style="width:100%;border-color: coral;">
 <canvas id="myChart" width="200" height="25" ></canvas>
@@ -41,40 +41,54 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 </body>
 
 </html>
--->
-
-
-
-{% load static %}
+-->{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>
-   Scheduling Simulator
-  </title>
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <!-- Nucleo Icons -->
-  <link href="{% static 'css/nucleo-icons.css'%}" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link href="{% static 'css/black-dashboard.css' %}" rel="stylesheet" />
-    <script>
-        edfArray = {{ edfArray }}
-        rmsArray = {{ rmsArray }}
-        interval = {{ interval }}
-        noOfTasks = {{ noOfTasks }}
-        algorithmInputArray = {{ algorithmInputArray }}
-    </script>
-     <script src="{% static 'js/controller.js' %}"></script>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title> Scheduling Simulator </title>
+	<!--     Fonts and icons     -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<!-- Nucleo Icons -->
+	<link href="{% static 'css/nucleo-icons.css'%}" rel="stylesheet" />
+	<!-- CSS Files -->
+	<link href="{% static 'css/black-dashboard.css' %}" rel="stylesheet" />
+	<script>
+	edfArray = {
+		{
+			edfArray
+		}
+	}
+	rmsArray = {
+		{
+			rmsArray
+		}
+	}
+	interval = {
+		{
+			interval
+		}
+	}
+	noOfTasks = {
+		{
+			noOfTasks
+		}
+	}
+	algorithmInputArray = {
+		{
+			algorithmInputArray
+		}
+	}
+	</script>
+	<script src="{% static 'js/controller.js' %}"></script>
 </head>
 
 <body class="">
-  <div class="wrapper">
-    <!--<div class="sidebar" >
+	<div class="wrapper">
+		<!--<div class="sidebar" >
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-normal">
@@ -92,324 +106,209 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
         </ul>
       </div>
     </div>-->
-    <div class="main-panel">
-      <!-- Navbar -->
-
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="card card-tasks">
-              <div class="card-header ">
-                <h4 class="title d-inline">Input</h4>
-
-               <!-- <div class="dropdown">
-                  <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
-                    <i class="tim-icons icon-settings-gear-63"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#pablo">Action</a>
-                    <a class="dropdown-item" href="#pablo">Another action</a>
-                    <a class="dropdown-item" href="#pablo">Something else</a>
-                  </div>
-                </div>-->
-              </div>
-              <div class="card-body ">
-                <div class="table-full-width table-responsive">
-                  <form action="/submitInput/" method="post">{% csrf_token %} {{ form }}
-			<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
-				<tr>
-					<th>Task</th>
-                    <th>Execution Time</th>
-                    <th>Period</th>
-                    <th>Deadline</th>
-					<th>Arrival Time</th>
-				</tr>
-				<tr>
-					<td id="task">1</td>
-                    <td>
-						<input type="text" id="exec_time" style="width: 100%;">
-					</td>
-                    <td>
-						<input type="text" id="period" style="width: 100%;">
-					</td>
-                    <td>
-						<input type="text" id="deadline" style="width: 100%;">
-					</td>
-					<td>
-						<input type="text" id="arrival_time" style="width: 100%;">
-					</td>
-					<td>
-						<input type="button" class="add" onclick="add_row();" value="Add Row">
-					</td>
-				</tr>
-			</table>
-			<input type="submit" value="Submit" onclick="submitData()">
-		</form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <div class="card ">
-              <div class="card-header">
-                <h4 class="card-title"> Console Output</h4>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table tablesorter " id="">
-                    <thead class=" text-primary">
-                      <tr>
-                        <th>
-                          Name
-                        </th>
-                        <th>
-                          Country
-                        </th>
-                        <th>
-                          City
-                        </th>
-                        <th class="text-center">
-                          Salary
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          Niger
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td class="text-center">
-                          $36,738
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Minerva Hooper
-                        </td>
-                        <td>
-                          Curaçao
-                        </td>
-                        <td>
-                          Sinaai-Waas
-                        </td>
-                        <td class="text-center">
-                          $23,789
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Sage Rodriguez
-                        </td>
-                        <td>
-                          Netherlands
-                        </td>
-                        <td>
-                          Baileux
-                        </td>
-                        <td class="text-center">
-                          $56,142
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Philip Chaney
-                        </td>
-                        <td>
-                          Korea, South
-                        </td>
-                        <td>
-                          Overland Park
-                        </td>
-                        <td class="text-center">
-                          $38,735
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Doris Greene
-                        </td>
-                        <td>
-                          Malawi
-                        </td>
-                        <td>
-                          Feldkirchen in Kärnten
-                        </td>
-                        <td class="text-center">
-                          $63,542
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Mason Porter
-                        </td>
-                        <td>
-                          Chile
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $78,615
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Jon Porter
-                        </td>
-                        <td>
-                          Portugal
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $98,615
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="row" >
-          <div class="col-12">
-            <div class="card card-chart">
-              <div class="card-header ">
-                <div class="row">
-                  <div class="col-sm-6 text-left">
-                    <h2 class="card-title">Rate Monotonic</h2>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                        <input type="radio" name="options" checked>
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>
-                        <span class="d-block d-sm-none">
+		<div class="main-panel">
+			<!-- Navbar -->
+			<div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <i class="tim-icons icon-simple-remove"></i> </button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Navbar -->
+			<div class="content">
+				<div class="row">
+					<div class="col-lg-8 col-md-12">
+						<div class="card card-tasks">
+							<div class="card-header ">
+								<h4 class="title d-inline">Input</h4>
+								</div>
+							<div class="card-body ">
+								<div class="table-full-width table-responsive">
+									<form action="/submitInput/" method="post">{% csrf_token %} {{ form }}
+										<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+											<tr>
+												<th>Task</th>
+												<th>Execution Time</th>
+												<th>Period</th>
+												<th>Deadline</th>
+												<th>Arrival Time</th>
+											</tr>
+											<tr>
+												<td id="task">1</td>
+												<td>
+													<input type="text" id="exec_time" style="width: 100%;"> </td>
+												<td>
+													<input type="text" id="period" style="width: 100%;"> </td>
+												<td>
+													<input type="text" id="deadline" style="width: 100%;"> </td>
+												<td>
+													<input type="text" id="arrival_time" style="width: 100%;"> </td>
+												<td>
+													<input type="button" class="add" onclick="add_row();" value="Add Row"> </td>
+											</tr>
+										</table>
+										<input type="submit" value="Submit" onclick="submitData()"> </form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12">
+						<div class="card ">
+							<div class="card-header">
+								<h4 class="card-title"> Console Output</h4> </div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table tablesorter " id="">
+										<thead class=" text-primary">
+											<tr>
+												<th> Name </th>
+												<th> Country </th>
+												<th> City </th>
+												<th class="text-center"> Salary </th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td> Dakota Rice </td>
+												<td> Niger </td>
+												<td> Oud-Turnhout </td>
+												<td class="text-center"> $36,738 </td>
+											</tr>
+											<tr>
+												<td> Minerva Hooper </td>
+												<td> Curaçao </td>
+												<td> Sinaai-Waas </td>
+												<td class="text-center"> $23,789 </td>
+											</tr>
+											<tr>
+												<td> Sage Rodriguez </td>
+												<td> Netherlands </td>
+												<td> Baileux </td>
+												<td class="text-center"> $56,142 </td>
+											</tr>
+											<tr>
+												<td> Philip Chaney </td>
+												<td> Korea, South </td>
+												<td> Overland Park </td>
+												<td class="text-center"> $38,735 </td>
+											</tr>
+											<tr>
+												<td> Doris Greene </td>
+												<td> Malawi </td>
+												<td> Feldkirchen in Kärnten </td>
+												<td class="text-center"> $63,542 </td>
+											</tr>
+											<tr>
+												<td> Mason Porter </td>
+												<td> Chile </td>
+												<td> Gloucester </td>
+												<td class="text-center"> $78,615 </td>
+											</tr>
+											<tr>
+												<td> Jon Porter </td>
+												<td> Portugal </td>
+												<td> Gloucester </td>
+												<td class="text-center"> $98,615 </td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="card card-chart">
+							<div class="card-header ">
+								<div class="row">
+									<div class="col-sm-6 text-left">
+										<h2 class="card-title">Rate Monotonic</h2> </div>
+									<div class="col-sm-6">
+										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+											<label class="btn btn-sm btn-primary btn-simple active" id="0">
+												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="1">
-                        <input type="radio" class="d-none d-sm-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>
-                        <span class="d-block d-sm-none">
+                        </span> </label>
+											<label class="btn btn-sm btn-primary btn-simple" id="1">
+												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div style ="height:50;">
-                <div >
-                  <canvas id="myChart" height="30" ></canvas>
-                </div>
-                  <!-- <div>
+                        </span> </label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="height:50;">
+								<div>
+									<canvas id="myChart" height="30"></canvas>
+								</div>
+								<!-- <div>
                   <canvas id="myChart2" height="30"></canvas>
-                </div>-->
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="row" >
-          <div class="col-12">
-            <div class="card card-chart">
-              <div class="card-header ">
-                <div class="row">
-                  <div class="col-sm-6 text-left">
-                    <h2 class="card-title">Earliest Deadline First</h2>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                      <label class="btn btn-sm btn-primary btn-simple active" id="2">
-                        <input type="radio" name="options" checked>
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>
-                        <span class="d-block d-sm-none">
+                </div>--></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="card card-chart">
+							<div class="card-header ">
+								<div class="row">
+									<div class="col-sm-6 text-left">
+										<h2 class="card-title">Earliest Deadline First</h2> </div>
+									<div class="col-sm-6">
+										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+											<label class="btn btn-sm btn-primary btn-simple active" id="2">
+												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="3">
-                        <input type="radio" class="d-none d-sm-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>
-                        <span class="d-block d-sm-none">
+                        </span> </label>
+											<label class="btn btn-sm btn-primary btn-simple" id="3">
+												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div style ="height:50;">
-                <!--<div >
+                        </span> </label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="height:50;">
+								<!--<div >
                   <canvas id="myChart" height="30" ></canvas>
                 </div>-->
-                   <div>
-                  <canvas id="myChart2" height="30"></canvas>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-
-              </a>
-            </li>
-          </ul>
-          <div class="copyright">
-
-           Developed by Jathin Sreenivas & Vineeth Bhat
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-  <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-      <a href="#" data-toggle="dropdown">
-        <i class="fa fa-cog fa-2x"> </i>
-      </a>
-      <ul class="dropdown-menu">
-        <li class="header-title">Background</li>
-       <!-- <li class="adjustments-line">
+								<div>
+									<canvas id="myChart2" height="30"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<ul class="nav">
+						<li class="nav-item">
+							<a href="javascript:void(0)" class="nav-link"> </a>
+						</li>
+						<li class="nav-item">
+							<a href="javascript:void(0)" class="nav-link"> </a>
+						</li>
+						<li class="nav-item">
+							<a href="javascript:void(0)" class="nav-link"> </a>
+						</li>
+					</ul>
+					<div class="copyright"> Developed by Jathin Sreenivas & Vineeth Bhat </div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<div class="fixed-plugin">
+		<div class="dropdown show-dropdown">
+			<a href="#" data-toggle="dropdown"> <i class="fa fa-cog fa-2x"> </i> </a>
+			<ul class="dropdown-menu">
+				<li class="header-title">Background</li>
+				<!-- <li class="adjustments-line">
           <a href="javascript:void(0)" class="switch-trigger background-color">
             <div class="badge-colors text-center">
               <span class="badge filter badge-primary active" data-color="primary"></span>
@@ -419,163 +318,128 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
             <div class="clearfix"></div>
           </a>
         </li>-->
-        <li class="adjustments-line text-center color-change">
-          <span class="color-label">LIGHT MODE</span>
-          <span class="badge light-badge mr-2"></span>
-          <span class="badge dark-badge ml-2"></span>
-          <span class="color-label">DARK MODE</span>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-  <!--   Core JS Files   -->
-  <script src="{% static 'js/core/jquery.min.js' %}"></script>
-  <script src="{% static 'js/core/popper.min.js' %}"></script>
-  <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
-  <!--  Google Maps Plugin    -->
-  <!-- Place this tag in your head or just before your close body tag. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
-  <!--  Notifications Plugin    -->
-  <script src="{% static 'js/plugins/bootstrap-notify.js' %}"></script>
-  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{% static 'js/black-dashboard.min.js' %}"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{% static 'demo/demo.js' %}"></script>
-  <script>
-createGraph('myChart','Rate Monotonic',rmsArray, algorithmInputArray);
-createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
-</script>
-  <script>
-    $(document).ready(function() {
-      $().ready(function() {
-        $sidebar = $('.sidebar');
-        $navbar = $('.navbar');
-        $main_panel = $('.main-panel');
-
-        $full_page = $('.full-page');
-
-        $sidebar_responsive = $('body > .navbar-collapse');
-        sidebar_mini_active = true;
-        white_color = false;
-
-        window_width = $(window).width();
-
-        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-
-
-        $('.fixed-plugin a').click(function(event) {
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
-          }
-        });
-
-        $('.fixed-plugin .background-color span').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
-
-          var new_color = $(this).data('color');
-
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data', new_color);
-          }
-
-          if ($main_panel.length != 0) {
-            $main_panel.attr('data', new_color);
-          }
-
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data', new_color);
-          }
-        });
-
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            sidebar_mini_active = false;
-            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-          } else {
-            $('body').addClass('sidebar-mini');
-            sidebar_mini_active = true;
-            blackDashboard.showSidebarMessage('Sidebar mini activated...');
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
-
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (white_color == true) {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').removeClass('white-content');
-            }, 900);
-            white_color = false;
-          } else {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').addClass('white-content');
-            }, 900);
-
-            white_color = true;
-          }
-
-
-        });
-
-        $('.light-badge').click(function() {
-          $('body').addClass('white-content');
-        });
-
-        $('.dark-badge').click(function() {
-          $('body').removeClass('white-content');
-        });
-      });
-    });
-  </script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "black-dashboard-free"
-      });
-  </script>
+				<li class="adjustments-line text-center color-change"> <span class="color-label">LIGHT MODE</span> <span class="badge light-badge mr-2"></span> <span class="badge dark-badge ml-2"></span> <span class="color-label">DARK MODE</span> </li>
+			</ul>
+		</div>
+	</div>
+	<!--   Core JS Files   -->
+	<script src="{% static 'js/core/jquery.min.js' %}"></script>
+	<script src="{% static 'js/core/popper.min.js' %}"></script>
+	<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+	<!--  Google Maps Plugin    -->
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+	<!-- Chart JS -->
+	<script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
+	<!--  Notifications Plugin    -->
+	<script src="{% static 'js/plugins/bootstrap-notify.js' %}"></script>
+	<!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+	<script src="{% static 'js/black-dashboard.min.js' %}"></script>
+	<!-- Black Dashboard DEMO methods, don't include it in your project! -->
+	<script src="{% static 'demo/demo.js' %}"></script>
+	<script>
+	createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray);
+	createGraph('myChart2', 'Earliest Dead First', edfArray, algorithmInputArray);
+	</script>
+	<script>
+	$(document).ready(function() {
+		$().ready(function() {
+			$sidebar = $('.sidebar');
+			$navbar = $('.navbar');
+			$main_panel = $('.main-panel');
+			$full_page = $('.full-page');
+			$sidebar_responsive = $('body > .navbar-collapse');
+			sidebar_mini_active = true;
+			white_color = false;
+			window_width = $(window).width();
+			fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+			$('.fixed-plugin a').click(function(event) {
+				if($(this).hasClass('switch-trigger')) {
+					if(event.stopPropagation) {
+						event.stopPropagation();
+					} else if(window.event) {
+						window.event.cancelBubble = true;
+					}
+				}
+			});
+			$('.fixed-plugin .background-color span').click(function() {
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				var new_color = $(this).data('color');
+				if($sidebar.length != 0) {
+					$sidebar.attr('data', new_color);
+				}
+				if($main_panel.length != 0) {
+					$main_panel.attr('data', new_color);
+				}
+				if($full_page.length != 0) {
+					$full_page.attr('filter-color', new_color);
+				}
+				if($sidebar_responsive.length != 0) {
+					$sidebar_responsive.attr('data', new_color);
+				}
+			});
+			$('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+				var $btn = $(this);
+				if(sidebar_mini_active == true) {
+					$('body').removeClass('sidebar-mini');
+					sidebar_mini_active = false;
+					blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+				} else {
+					$('body').addClass('sidebar-mini');
+					sidebar_mini_active = true;
+					blackDashboard.showSidebarMessage('Sidebar mini activated...');
+				}
+				// we simulate the window Resize so the charts will get updated in realtime.
+				var simulateWindowResize = setInterval(function() {
+					window.dispatchEvent(new Event('resize'));
+				}, 180);
+				// we stop the simulation of Window Resize after the animations are completed
+				setTimeout(function() {
+					clearInterval(simulateWindowResize);
+				}, 1000);
+			});
+			$('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+				var $btn = $(this);
+				if(white_color == true) {
+					$('body').addClass('change-background');
+					setTimeout(function() {
+						$('body').removeClass('change-background');
+						$('body').removeClass('white-content');
+					}, 900);
+					white_color = false;
+				} else {
+					$('body').addClass('change-background');
+					setTimeout(function() {
+						$('body').removeClass('change-background');
+						$('body').addClass('white-content');
+					}, 900);
+					white_color = true;
+				}
+			});
+			$('.light-badge').click(function() {
+				$('body').addClass('white-content');
+			});
+			$('.dark-badge').click(function() {
+				$('body').removeClass('white-content');
+			});
+		});
+	});
+	</script>
+	<script>
+	$(document).ready(function() {
+		// Javascript method's body can be found in assets/js/demos.js
+		demo.initDashboardPageCharts();
+	});
+	</script>
+	<script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+	<script>
+	window.TrackJS && TrackJS.install({
+		token: "ee6fab19c5a04ac1a32a645abde4613a",
+		application: "black-dashboard-free"
+	});
+	</script>
 </body>
 
 </html>
-
-
