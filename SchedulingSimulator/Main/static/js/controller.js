@@ -72,9 +72,16 @@
             type: 'bar',
             data: barChartData,
             options: {
+                    legend: {
+                        labels: {
+
+                            fontColor: 'white'
+                        }
+                },
                 title: {
                     display: true,
-                    text: title
+                    text: title,
+                    fontColor: 'white'
                 },
 
                 responsive: true,
@@ -86,6 +93,7 @@
                         stacked: true,
                         display: false,
                     }]
+
                 }
             }
         });
