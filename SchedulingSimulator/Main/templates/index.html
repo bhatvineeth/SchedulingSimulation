@@ -9,6 +9,7 @@
         interval = {{ interval }}
         noOfTasks = {{ noOfTasks }}
         algorithmInputArray = {{ algorithmInputArray }}
+        var ri = 1;
     </script>
 
   <script src="{% static 'js/controller.js' %}"></script>
@@ -24,13 +25,13 @@
 <!--
 <hr>
 <div style="width:100%;border-color: coral;">
-<canvas id="myChart" width="200" height="25" ></canvas>
+<canvas id="myChart" width="200" height="50" ></canvas>
 </div>
 <br>
 <hr>
 <br>
 <div style="width:100%;border-color: coral;">
-<canvas id="myChart2" width="200" height="25" ></canvas>
+<canvas id="myChart2" width="200" height="75" ></canvas>
 </div>
 <br>
 <hr>
@@ -57,31 +58,12 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 	<!-- CSS Files -->
 	<link href="{% static 'css/black-dashboard.css' %}" rel="stylesheet" />
 	<script>
-	edfArray = {
-		{
-			edfArray
-		}
-	}
-	rmsArray = {
-		{
-			rmsArray
-		}
-	}
-	interval = {
-		{
-			interval
-		}
-	}
-	noOfTasks = {
-		{
-			noOfTasks
-		}
-	}
-	algorithmInputArray = {
-		{
-			algorithmInputArray
-		}
-	}
+	edfArray = {{ edfArray }}
+	rmsArray = {{ rmsArray }}
+	interval = {{ interval }}
+	noOfTasks = {{ noOfTasks }}
+	algorithmInputArray = {{ algorithmInputArray }}
+	var ri = 1;
 	</script>
 	<script src="{% static 'js/controller.js' %}"></script>
 </head>
@@ -128,7 +110,7 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 								</div>
 							<div class="card-body ">
 								<div class="table-full-width table-responsive">
-									<form action="/submitInput/" method="post">{% csrf_token %} {{ form }}
+									<form action="" method="post">{% csrf_token %} {{ form }}
 										<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
 											<tr>
 												<th>Task</th>
@@ -339,6 +321,7 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 	<!-- Black Dashboard DEMO methods, don't include it in your project! -->
 	<script src="{% static 'demo/demo.js' %}"></script>
 	<script>
+	createTable(algorithmInputArray);
 	createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray);
 	createGraph('myChart2', 'Earliest Dead First', edfArray, algorithmInputArray);
 	</script>
