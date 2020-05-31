@@ -1,3 +1,6 @@
+import io
+import sys
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
@@ -42,15 +45,32 @@ def openIndex(request):
 
 @csrf_protect
 def submitInput(request):
+    #for printing the console into a variable
+    old_stdout = sys.stdout
+    new_stdout = io.StringIO()
+    sys.stdout = new_stdout
+
     final_array = request.POST.get('final_array')
     interval = request.POST.get('interval')
     noOfTasks = request.POST.get('noOfTasks')
+
+    #splitting the input into desired format
     algorithmInputArray = arraySplit(final_array)
-    edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
+
+    #calculating rate monotonic scheduling algorithm
     rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
     rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
+
+    #calculate earliest deadline firstscheduling algorithm
+    edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
+
+    #formating the input arrray to send it back to screen
     algorithmInputArray = returnInputArray(algorithmInputArray)
-    return render(request, 'index.html', {'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks, 'algorithmInputArray': algorithmInputArray})
+
+    #writing standard output to variable
+    outputConsole = new_stdout.getvalue()
+    sys.stdout = old_stdout #setting the standard output back to console
+    return render(request, 'index.html', {'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks, 'algorithmInputArray': algorithmInputArray, 'outputConsole': outputConsole})
 
 # TODO: Stay on same page when form submits
 def get_name(request):
