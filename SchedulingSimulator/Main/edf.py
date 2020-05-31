@@ -1,7 +1,7 @@
 def earliestDeadlineFirstAlgorithm(tasks):
     logFile = open("log/EDF.log", "w+")
     print("EARLIEST DEADLINE FIRST: START\n", file=logFile)
-    print("Earliest Deadline First: \n")
+    print("Earliest Deadline First:")
     n = len(tasks)
     tasks.sort(key=lambda x: x[2])
     i = 0
@@ -22,7 +22,7 @@ def earliestDeadlineFirstAlgorithm(tasks):
 
     if u > 1:
         print("The tasks are not feasible", file=logFile)
-        print("The tasks are not feasible")
+        print("Processes are not schedulable")
 
     else:
 

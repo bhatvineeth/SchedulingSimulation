@@ -13,21 +13,41 @@ from django.template import RequestContext
 
 @csrf_protect
 def openSimulator(request) :
+    # for printing the console into a variable
+    old_stdout = sys.stdout
+    new_stdout = io.StringIO()
+    sys.stdout = new_stdout
+
     if request.method == 'POST':
         form = UserCreationForm()
         final_array = request.POST.get('final_array')
         interval = request.POST.get('interval')
         noOfTasks = request.POST.get('noOfTasks')
         form['interval'].initial = interval
+
+        # splitting the input into desired format
         algorithmInputArray = arraySplit(final_array)
-        edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
+
+        # calculating rate monotonic scheduling algorithm
         rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
         rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
+
+        # calculate earliest deadline first scheduling algorithm
+        edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
+
+        # formating the input array to send it back to screen
         algorithmInputArray = returnInputArray(algorithmInputArray)
-        return render(request, 'index.html',{'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form})
+
+        # writing standard output to variable
+        outputConsole = new_stdout.getvalue()
+        sys.stdout = old_stdout  # setting the standard output back to console
+
+        return render(request, 'index.html',{'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
     else:
         form = UserCreationForm()
-        return render(request, 'index.html', {'edfArray': [], 'rmsArray': [], 'interval': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form})
+        outputConsole = new_stdout.getvalue()
+        sys.stdout = old_stdout  # setting the standard output back to console
+        return render(request, 'index.html', {'edfArray': [], 'rmsArray': [], 'interval': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
 
 
 

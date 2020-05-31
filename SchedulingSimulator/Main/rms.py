@@ -51,7 +51,7 @@ def printSequence(processes, n, logFile):
 def rateMonotonicScheduling(processes):
     logFile = open("log/RMS.log", "w+")
     print("RATE MONOTONIC SCHEDULING: START\n", file=logFile)
-    print("Rate Monotonic Scheduling:\n")
+    print("Rate Monotonic Scheduling:")
     finalArray = []
     n = len(processes)
     processes.sort(key=lambda x: x[1])
@@ -99,11 +99,11 @@ def rateMonotonicScheduling(processes):
                     break
             if success == 1:
                 print("processes are schedulable", file=logFile)
-                print("processes are schedulable")
+                print("Processes are schedulable")
                 finalArray = printSequence(processes, n, logFile)
     else:
         print("processes are not schedulable", file=logFile)
-        print("processes are not schedulable")
+        print("Processes are not schedulable")
     print("RATE MONOTONIC SCHEDULING: ENDn\n\n\n", file=logFile)
-    print("\n--------------------------------\n")
+    print("\n-------------------------------------------------\n")
     return finalArray
