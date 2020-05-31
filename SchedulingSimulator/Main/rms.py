@@ -35,9 +35,10 @@ def printSequence(processes, n, logFile):
             Result.append(-1)
     print("Timeline length: ", LCM)
     for i in range(0, LCM):
+        startingPoints.append(i)
         if Result[i] != - 1:
             print("From% d to% d: p% d " % (i, i + 1, Result[i]), file=logFile)
-            startingPoints.append(i)
+
             tasksArray.append(Result[i])
         else:
             print(" From% d to% d: Empty slot " % (i, i + 1) , file=logFile)

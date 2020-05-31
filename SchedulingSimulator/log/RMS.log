@@ -1,10 +1,1328 @@
 RATE MONOTONIC SCHEDULING: START
 
-[[1, 2]]
-Utilization: 0.500000
+[[1, 8], [3, 15], [4, 20], [6, 22]]
+Utilization: 0.797727
 processes are schedulable
 From 0 to 1: p 1 
- From 1 to 2: Empty slot 
+From 1 to 2: p 2 
+From 2 to 3: p 2 
+From 3 to 4: p 2 
+From 4 to 5: p 3 
+From 5 to 6: p 3 
+From 6 to 7: p 3 
+From 7 to 8: p 3 
+From 8 to 9: p 1 
+From 9 to 10: p 4 
+From 10 to 11: p 4 
+From 11 to 12: p 4 
+From 12 to 13: p 4 
+From 13 to 14: p 4 
+From 14 to 15: p 4 
+From 15 to 16: p 2 
+From 16 to 17: p 1 
+From 17 to 18: p 2 
+From 18 to 19: p 2 
+ From 19 to 20: Empty slot 
+From 20 to 21: p 3 
+From 21 to 22: p 3 
+From 22 to 23: p 3 
+From 23 to 24: p 3 
+From 24 to 25: p 1 
+From 25 to 26: p 4 
+From 26 to 27: p 4 
+From 27 to 28: p 4 
+From 28 to 29: p 4 
+From 29 to 30: p 4 
+From 30 to 31: p 2 
+From 31 to 32: p 2 
+From 32 to 33: p 1 
+From 33 to 34: p 2 
+From 34 to 35: p 4 
+ From 35 to 36: Empty slot 
+ From 36 to 37: Empty slot 
+ From 37 to 38: Empty slot 
+ From 38 to 39: Empty slot 
+ From 39 to 40: Empty slot 
+From 40 to 41: p 1 
+From 41 to 42: p 3 
+From 42 to 43: p 3 
+From 43 to 44: p 3 
+From 44 to 45: p 3 
+From 45 to 46: p 2 
+From 46 to 47: p 2 
+From 47 to 48: p 2 
+From 48 to 49: p 1 
+From 49 to 50: p 4 
+From 50 to 51: p 4 
+From 51 to 52: p 4 
+From 52 to 53: p 4 
+From 53 to 54: p 4 
+From 54 to 55: p 4 
+ From 55 to 56: Empty slot 
+From 56 to 57: p 1 
+ From 57 to 58: Empty slot 
+ From 58 to 59: Empty slot 
+ From 59 to 60: Empty slot 
+From 60 to 61: p 2 
+From 61 to 62: p 2 
+From 62 to 63: p 2 
+From 63 to 64: p 3 
+From 64 to 65: p 1 
+From 65 to 66: p 3 
+From 66 to 67: p 3 
+From 67 to 68: p 3 
+From 68 to 69: p 4 
+From 69 to 70: p 4 
+From 70 to 71: p 4 
+From 71 to 72: p 4 
+From 72 to 73: p 1 
+From 73 to 74: p 4 
+From 74 to 75: p 4 
+From 75 to 76: p 2 
+From 76 to 77: p 2 
+From 77 to 78: p 2 
+ From 78 to 79: Empty slot 
+ From 79 to 80: Empty slot 
+From 80 to 81: p 1 
+From 81 to 82: p 3 
+From 82 to 83: p 3 
+From 83 to 84: p 3 
+From 84 to 85: p 3 
+ From 85 to 86: Empty slot 
+ From 86 to 87: Empty slot 
+ From 87 to 88: Empty slot 
+From 88 to 89: p 1 
+From 89 to 90: p 4 
+From 90 to 91: p 2 
+From 91 to 92: p 2 
+From 92 to 93: p 2 
+From 93 to 94: p 4 
+From 94 to 95: p 4 
+From 95 to 96: p 4 
+From 96 to 97: p 1 
+From 97 to 98: p 4 
+From 98 to 99: p 4 
+ From 99 to 100: Empty slot 
+From 100 to 101: p 3 
+From 101 to 102: p 3 
+From 102 to 103: p 3 
+From 103 to 104: p 3 
+From 104 to 105: p 1 
+From 105 to 106: p 2 
+From 106 to 107: p 2 
+From 107 to 108: p 2 
+ From 108 to 109: Empty slot 
+ From 109 to 110: Empty slot 
+From 110 to 111: p 4 
+From 111 to 112: p 4 
+From 112 to 113: p 1 
+From 113 to 114: p 4 
+From 114 to 115: p 4 
+From 115 to 116: p 4 
+From 116 to 117: p 4 
+ From 117 to 118: Empty slot 
+ From 118 to 119: Empty slot 
+ From 119 to 120: Empty slot 
+From 120 to 121: p 1 
+From 121 to 122: p 2 
+From 122 to 123: p 2 
+From 123 to 124: p 2 
+From 124 to 125: p 3 
+From 125 to 126: p 3 
+From 126 to 127: p 3 
+From 127 to 128: p 3 
+From 128 to 129: p 1 
+ From 129 to 130: Empty slot 
+ From 130 to 131: Empty slot 
+ From 131 to 132: Empty slot 
+From 132 to 133: p 4 
+From 133 to 134: p 4 
+From 134 to 135: p 4 
+From 135 to 136: p 2 
+From 136 to 137: p 1 
+From 137 to 138: p 2 
+From 138 to 139: p 2 
+From 139 to 140: p 4 
+From 140 to 141: p 3 
+From 141 to 142: p 3 
+From 142 to 143: p 3 
+From 143 to 144: p 3 
+From 144 to 145: p 1 
+From 145 to 146: p 4 
+From 146 to 147: p 4 
+ From 147 to 148: Empty slot 
+ From 148 to 149: Empty slot 
+ From 149 to 150: Empty slot 
+From 150 to 151: p 2 
+From 151 to 152: p 2 
+From 152 to 153: p 1 
+From 153 to 154: p 2 
+From 154 to 155: p 4 
+From 155 to 156: p 4 
+From 156 to 157: p 4 
+From 157 to 158: p 4 
+From 158 to 159: p 4 
+From 159 to 160: p 4 
+From 160 to 161: p 1 
+From 161 to 162: p 3 
+From 162 to 163: p 3 
+From 163 to 164: p 3 
+From 164 to 165: p 3 
+From 165 to 166: p 2 
+From 166 to 167: p 2 
+From 167 to 168: p 2 
+From 168 to 169: p 1 
+ From 169 to 170: Empty slot 
+ From 170 to 171: Empty slot 
+ From 171 to 172: Empty slot 
+ From 172 to 173: Empty slot 
+ From 173 to 174: Empty slot 
+ From 174 to 175: Empty slot 
+ From 175 to 176: Empty slot 
+From 176 to 177: p 1 
+From 177 to 178: p 4 
+From 178 to 179: p 4 
+From 179 to 180: p 4 
+From 180 to 181: p 2 
+From 181 to 182: p 2 
+From 182 to 183: p 2 
+From 183 to 184: p 3 
+From 184 to 185: p 1 
+From 185 to 186: p 3 
+From 186 to 187: p 3 
+From 187 to 188: p 3 
+From 188 to 189: p 4 
+From 189 to 190: p 4 
+From 190 to 191: p 4 
+ From 191 to 192: Empty slot 
+From 192 to 193: p 1 
+ From 193 to 194: Empty slot 
+ From 194 to 195: Empty slot 
+From 195 to 196: p 2 
+From 196 to 197: p 2 
+From 197 to 198: p 2 
+From 198 to 199: p 4 
+From 199 to 200: p 4 
+From 200 to 201: p 1 
+From 201 to 202: p 3 
+From 202 to 203: p 3 
+From 203 to 204: p 3 
+From 204 to 205: p 3 
+From 205 to 206: p 4 
+From 206 to 207: p 4 
+From 207 to 208: p 4 
+From 208 to 209: p 1 
+From 209 to 210: p 4 
+From 210 to 211: p 2 
+From 211 to 212: p 2 
+From 212 to 213: p 2 
+ From 213 to 214: Empty slot 
+ From 214 to 215: Empty slot 
+ From 215 to 216: Empty slot 
+From 216 to 217: p 1 
+ From 217 to 218: Empty slot 
+ From 218 to 219: Empty slot 
+ From 219 to 220: Empty slot 
+From 220 to 221: p 3 
+From 221 to 222: p 3 
+From 222 to 223: p 3 
+From 223 to 224: p 3 
+From 224 to 225: p 1 
+From 225 to 226: p 2 
+From 226 to 227: p 2 
+From 227 to 228: p 2 
+From 228 to 229: p 4 
+From 229 to 230: p 4 
+From 230 to 231: p 4 
+From 231 to 232: p 4 
+From 232 to 233: p 1 
+From 233 to 234: p 4 
+From 234 to 235: p 4 
+ From 235 to 236: Empty slot 
+ From 236 to 237: Empty slot 
+ From 237 to 238: Empty slot 
+ From 238 to 239: Empty slot 
+ From 239 to 240: Empty slot 
+From 240 to 241: p 1 
+From 241 to 242: p 2 
+From 242 to 243: p 2 
+From 243 to 244: p 2 
+From 244 to 245: p 3 
+From 245 to 246: p 3 
+From 246 to 247: p 3 
+From 247 to 248: p 3 
+From 248 to 249: p 1 
+From 249 to 250: p 4 
+From 250 to 251: p 4 
+From 251 to 252: p 4 
+From 252 to 253: p 4 
+From 253 to 254: p 4 
+From 254 to 255: p 4 
+From 255 to 256: p 2 
+From 256 to 257: p 1 
+From 257 to 258: p 2 
+From 258 to 259: p 2 
+ From 259 to 260: Empty slot 
+From 260 to 261: p 3 
+From 261 to 262: p 3 
+From 262 to 263: p 3 
+From 263 to 264: p 3 
+From 264 to 265: p 1 
+From 265 to 266: p 4 
+From 266 to 267: p 4 
+From 267 to 268: p 4 
+From 268 to 269: p 4 
+From 269 to 270: p 4 
+From 270 to 271: p 2 
+From 271 to 272: p 2 
+From 272 to 273: p 1 
+From 273 to 274: p 2 
+From 274 to 275: p 4 
+ From 275 to 276: Empty slot 
+ From 276 to 277: Empty slot 
+ From 277 to 278: Empty slot 
+ From 278 to 279: Empty slot 
+ From 279 to 280: Empty slot 
+From 280 to 281: p 1 
+From 281 to 282: p 3 
+From 282 to 283: p 3 
+From 283 to 284: p 3 
+From 284 to 285: p 3 
+From 285 to 286: p 2 
+From 286 to 287: p 2 
+From 287 to 288: p 2 
+From 288 to 289: p 1 
+From 289 to 290: p 4 
+From 290 to 291: p 4 
+From 291 to 292: p 4 
+From 292 to 293: p 4 
+From 293 to 294: p 4 
+From 294 to 295: p 4 
+ From 295 to 296: Empty slot 
+From 296 to 297: p 1 
+ From 297 to 298: Empty slot 
+ From 298 to 299: Empty slot 
+ From 299 to 300: Empty slot 
+From 300 to 301: p 2 
+From 301 to 302: p 2 
+From 302 to 303: p 2 
+From 303 to 304: p 3 
+From 304 to 305: p 1 
+From 305 to 306: p 3 
+From 306 to 307: p 3 
+From 307 to 308: p 3 
+From 308 to 309: p 4 
+From 309 to 310: p 4 
+From 310 to 311: p 4 
+From 311 to 312: p 4 
+From 312 to 313: p 1 
+From 313 to 314: p 4 
+From 314 to 315: p 4 
+From 315 to 316: p 2 
+From 316 to 317: p 2 
+From 317 to 318: p 2 
+ From 318 to 319: Empty slot 
+ From 319 to 320: Empty slot 
+From 320 to 321: p 1 
+From 321 to 322: p 3 
+From 322 to 323: p 3 
+From 323 to 324: p 3 
+From 324 to 325: p 3 
+ From 325 to 326: Empty slot 
+ From 326 to 327: Empty slot 
+ From 327 to 328: Empty slot 
+From 328 to 329: p 1 
+ From 329 to 330: Empty slot 
+From 330 to 331: p 2 
+From 331 to 332: p 2 
+From 332 to 333: p 2 
+From 333 to 334: p 4 
+From 334 to 335: p 4 
+From 335 to 336: p 4 
+From 336 to 337: p 1 
+From 337 to 338: p 4 
+From 338 to 339: p 4 
+From 339 to 340: p 4 
+From 340 to 341: p 3 
+From 341 to 342: p 3 
+From 342 to 343: p 3 
+From 343 to 344: p 3 
+From 344 to 345: p 1 
+From 345 to 346: p 2 
+From 346 to 347: p 2 
+From 347 to 348: p 2 
+ From 348 to 349: Empty slot 
+ From 349 to 350: Empty slot 
+ From 350 to 351: Empty slot 
+ From 351 to 352: Empty slot 
+From 352 to 353: p 1 
+From 353 to 354: p 4 
+From 354 to 355: p 4 
+From 355 to 356: p 4 
+From 356 to 357: p 4 
+From 357 to 358: p 4 
+From 358 to 359: p 4 
+ From 359 to 360: Empty slot 
+From 360 to 361: p 1 
+From 361 to 362: p 2 
+From 362 to 363: p 2 
+From 363 to 364: p 2 
+From 364 to 365: p 3 
+From 365 to 366: p 3 
+From 366 to 367: p 3 
+From 367 to 368: p 3 
+From 368 to 369: p 1 
+ From 369 to 370: Empty slot 
+ From 370 to 371: Empty slot 
+ From 371 to 372: Empty slot 
+ From 372 to 373: Empty slot 
+ From 373 to 374: Empty slot 
+From 374 to 375: p 4 
+From 375 to 376: p 2 
+From 376 to 377: p 1 
+From 377 to 378: p 2 
+From 378 to 379: p 2 
+From 379 to 380: p 4 
+From 380 to 381: p 3 
+From 381 to 382: p 3 
+From 382 to 383: p 3 
+From 383 to 384: p 3 
+From 384 to 385: p 1 
+From 385 to 386: p 4 
+From 386 to 387: p 4 
+From 387 to 388: p 4 
+From 388 to 389: p 4 
+ From 389 to 390: Empty slot 
+From 390 to 391: p 2 
+From 391 to 392: p 2 
+From 392 to 393: p 1 
+From 393 to 394: p 2 
+ From 394 to 395: Empty slot 
+ From 395 to 396: Empty slot 
+From 396 to 397: p 4 
+From 397 to 398: p 4 
+From 398 to 399: p 4 
+From 399 to 400: p 4 
+From 400 to 401: p 1 
+From 401 to 402: p 3 
+From 402 to 403: p 3 
+From 403 to 404: p 3 
+From 404 to 405: p 3 
+From 405 to 406: p 2 
+From 406 to 407: p 2 
+From 407 to 408: p 2 
+From 408 to 409: p 1 
+From 409 to 410: p 4 
+From 410 to 411: p 4 
+ From 411 to 412: Empty slot 
+ From 412 to 413: Empty slot 
+ From 413 to 414: Empty slot 
+ From 414 to 415: Empty slot 
+ From 415 to 416: Empty slot 
+From 416 to 417: p 1 
+ From 417 to 418: Empty slot 
+From 418 to 419: p 4 
+From 419 to 420: p 4 
+From 420 to 421: p 2 
+From 421 to 422: p 2 
+From 422 to 423: p 2 
+From 423 to 424: p 3 
+From 424 to 425: p 1 
+From 425 to 426: p 3 
+From 426 to 427: p 3 
+From 427 to 428: p 3 
+From 428 to 429: p 4 
+From 429 to 430: p 4 
+From 430 to 431: p 4 
+From 431 to 432: p 4 
+From 432 to 433: p 1 
+ From 433 to 434: Empty slot 
+ From 434 to 435: Empty slot 
+From 435 to 436: p 2 
+From 436 to 437: p 2 
+From 437 to 438: p 2 
+ From 438 to 439: Empty slot 
+ From 439 to 440: Empty slot 
+From 440 to 441: p 1 
+From 441 to 442: p 3 
+From 442 to 443: p 3 
+From 443 to 444: p 3 
+From 444 to 445: p 3 
+From 445 to 446: p 4 
+From 446 to 447: p 4 
+From 447 to 448: p 4 
+From 448 to 449: p 1 
+From 449 to 450: p 4 
+From 450 to 451: p 2 
+From 451 to 452: p 2 
+From 452 to 453: p 2 
+From 453 to 454: p 4 
+From 454 to 455: p 4 
+ From 455 to 456: Empty slot 
+From 456 to 457: p 1 
+ From 457 to 458: Empty slot 
+ From 458 to 459: Empty slot 
+ From 459 to 460: Empty slot 
+From 460 to 461: p 3 
+From 461 to 462: p 3 
+From 462 to 463: p 3 
+From 463 to 464: p 3 
+From 464 to 465: p 1 
+From 465 to 466: p 2 
+From 466 to 467: p 2 
+From 467 to 468: p 2 
+From 468 to 469: p 4 
+From 469 to 470: p 4 
+From 470 to 471: p 4 
+From 471 to 472: p 4 
+From 472 to 473: p 1 
+From 473 to 474: p 4 
+From 474 to 475: p 4 
+ From 475 to 476: Empty slot 
+ From 476 to 477: Empty slot 
+ From 477 to 478: Empty slot 
+ From 478 to 479: Empty slot 
+ From 479 to 480: Empty slot 
+From 480 to 481: p 1 
+From 481 to 482: p 2 
+From 482 to 483: p 2 
+From 483 to 484: p 2 
+From 484 to 485: p 3 
+From 485 to 486: p 3 
+From 486 to 487: p 3 
+From 487 to 488: p 3 
+From 488 to 489: p 1 
+From 489 to 490: p 4 
+From 490 to 491: p 4 
+From 491 to 492: p 4 
+From 492 to 493: p 4 
+From 493 to 494: p 4 
+From 494 to 495: p 4 
+From 495 to 496: p 2 
+From 496 to 497: p 1 
+From 497 to 498: p 2 
+From 498 to 499: p 2 
+ From 499 to 500: Empty slot 
+From 500 to 501: p 3 
+From 501 to 502: p 3 
+From 502 to 503: p 3 
+From 503 to 504: p 3 
+From 504 to 505: p 1 
+ From 505 to 506: Empty slot 
+From 506 to 507: p 4 
+From 507 to 508: p 4 
+From 508 to 509: p 4 
+From 509 to 510: p 4 
+From 510 to 511: p 2 
+From 511 to 512: p 2 
+From 512 to 513: p 1 
+From 513 to 514: p 2 
+From 514 to 515: p 4 
+From 515 to 516: p 4 
+ From 516 to 517: Empty slot 
+ From 517 to 518: Empty slot 
+ From 518 to 519: Empty slot 
+ From 519 to 520: Empty slot 
+From 520 to 521: p 1 
+From 521 to 522: p 3 
+From 522 to 523: p 3 
+From 523 to 524: p 3 
+From 524 to 525: p 3 
+From 525 to 526: p 2 
+From 526 to 527: p 2 
+From 527 to 528: p 2 
+From 528 to 529: p 1 
+From 529 to 530: p 4 
+From 530 to 531: p 4 
+From 531 to 532: p 4 
+From 532 to 533: p 4 
+From 533 to 534: p 4 
+From 534 to 535: p 4 
+ From 535 to 536: Empty slot 
+From 536 to 537: p 1 
+ From 537 to 538: Empty slot 
+ From 538 to 539: Empty slot 
+ From 539 to 540: Empty slot 
+From 540 to 541: p 2 
+From 541 to 542: p 2 
+From 542 to 543: p 2 
+From 543 to 544: p 3 
+From 544 to 545: p 1 
+From 545 to 546: p 3 
+From 546 to 547: p 3 
+From 547 to 548: p 3 
+ From 548 to 549: Empty slot 
+ From 549 to 550: Empty slot 
+From 550 to 551: p 4 
+From 551 to 552: p 4 
+From 552 to 553: p 1 
+From 553 to 554: p 4 
+From 554 to 555: p 4 
+From 555 to 556: p 2 
+From 556 to 557: p 2 
+From 557 to 558: p 2 
+From 558 to 559: p 4 
+From 559 to 560: p 4 
+From 560 to 561: p 1 
+From 561 to 562: p 3 
+From 562 to 563: p 3 
+From 563 to 564: p 3 
+From 564 to 565: p 3 
+ From 565 to 566: Empty slot 
+ From 566 to 567: Empty slot 
+ From 567 to 568: Empty slot 
+From 568 to 569: p 1 
+ From 569 to 570: Empty slot 
+From 570 to 571: p 2 
+From 571 to 572: p 2 
+From 572 to 573: p 2 
+From 573 to 574: p 4 
+From 574 to 575: p 4 
+From 575 to 576: p 4 
+From 576 to 577: p 1 
+From 577 to 578: p 4 
+From 578 to 579: p 4 
+From 579 to 580: p 4 
+From 580 to 581: p 3 
+From 581 to 582: p 3 
+From 582 to 583: p 3 
+From 583 to 584: p 3 
+From 584 to 585: p 1 
+From 585 to 586: p 2 
+From 586 to 587: p 2 
+From 587 to 588: p 2 
+ From 588 to 589: Empty slot 
+ From 589 to 590: Empty slot 
+ From 590 to 591: Empty slot 
+ From 591 to 592: Empty slot 
+From 592 to 593: p 1 
+ From 593 to 594: Empty slot 
+From 594 to 595: p 4 
+From 595 to 596: p 4 
+From 596 to 597: p 4 
+From 597 to 598: p 4 
+From 598 to 599: p 4 
+From 599 to 600: p 4 
+From 600 to 601: p 1 
+From 601 to 602: p 2 
+From 602 to 603: p 2 
+From 603 to 604: p 2 
+From 604 to 605: p 3 
+From 605 to 606: p 3 
+From 606 to 607: p 3 
+From 607 to 608: p 3 
+From 608 to 609: p 1 
+ From 609 to 610: Empty slot 
+ From 610 to 611: Empty slot 
+ From 611 to 612: Empty slot 
+ From 612 to 613: Empty slot 
+ From 613 to 614: Empty slot 
+ From 614 to 615: Empty slot 
+From 615 to 616: p 2 
+From 616 to 617: p 1 
+From 617 to 618: p 2 
+From 618 to 619: p 2 
+From 619 to 620: p 4 
+From 620 to 621: p 3 
+From 621 to 622: p 3 
+From 622 to 623: p 3 
+From 623 to 624: p 3 
+From 624 to 625: p 1 
+From 625 to 626: p 4 
+From 626 to 627: p 4 
+From 627 to 628: p 4 
+From 628 to 629: p 4 
+From 629 to 630: p 4 
+From 630 to 631: p 2 
+From 631 to 632: p 2 
+From 632 to 633: p 1 
+From 633 to 634: p 2 
+ From 634 to 635: Empty slot 
+ From 635 to 636: Empty slot 
+ From 636 to 637: Empty slot 
+ From 637 to 638: Empty slot 
+From 638 to 639: p 4 
+From 639 to 640: p 4 
+From 640 to 641: p 1 
+From 641 to 642: p 3 
+From 642 to 643: p 3 
+From 643 to 644: p 3 
+From 644 to 645: p 3 
+From 645 to 646: p 2 
+From 646 to 647: p 2 
+From 647 to 648: p 2 
+From 648 to 649: p 1 
+From 649 to 650: p 4 
+From 650 to 651: p 4 
+From 651 to 652: p 4 
+From 652 to 653: p 4 
+ From 653 to 654: Empty slot 
+ From 654 to 655: Empty slot 
+ From 655 to 656: Empty slot 
+From 656 to 657: p 1 
+ From 657 to 658: Empty slot 
+ From 658 to 659: Empty slot 
+ From 659 to 660: Empty slot 
+From 660 to 661: p 2 
+From 661 to 662: p 2 
+From 662 to 663: p 2 
+From 663 to 664: p 3 
+From 664 to 665: p 1 
+From 665 to 666: p 3 
+From 666 to 667: p 3 
+From 667 to 668: p 3 
+From 668 to 669: p 4 
+From 669 to 670: p 4 
+From 670 to 671: p 4 
+From 671 to 672: p 4 
+From 672 to 673: p 1 
+From 673 to 674: p 4 
+From 674 to 675: p 4 
+From 675 to 676: p 2 
+From 676 to 677: p 2 
+From 677 to 678: p 2 
+ From 678 to 679: Empty slot 
+ From 679 to 680: Empty slot 
+From 680 to 681: p 1 
+From 681 to 682: p 3 
+From 682 to 683: p 3 
+From 683 to 684: p 3 
+From 684 to 685: p 3 
+From 685 to 686: p 4 
+From 686 to 687: p 4 
+From 687 to 688: p 4 
+From 688 to 689: p 1 
+From 689 to 690: p 4 
+From 690 to 691: p 2 
+From 691 to 692: p 2 
+From 692 to 693: p 2 
+From 693 to 694: p 4 
+From 694 to 695: p 4 
+ From 695 to 696: Empty slot 
+From 696 to 697: p 1 
+ From 697 to 698: Empty slot 
+ From 698 to 699: Empty slot 
+ From 699 to 700: Empty slot 
+From 700 to 701: p 3 
+From 701 to 702: p 3 
+From 702 to 703: p 3 
+From 703 to 704: p 3 
+From 704 to 705: p 1 
+From 705 to 706: p 2 
+From 706 to 707: p 2 
+From 707 to 708: p 2 
+From 708 to 709: p 4 
+From 709 to 710: p 4 
+From 710 to 711: p 4 
+From 711 to 712: p 4 
+From 712 to 713: p 1 
+From 713 to 714: p 4 
+From 714 to 715: p 4 
+ From 715 to 716: Empty slot 
+ From 716 to 717: Empty slot 
+ From 717 to 718: Empty slot 
+ From 718 to 719: Empty slot 
+ From 719 to 720: Empty slot 
+From 720 to 721: p 1 
+From 721 to 722: p 2 
+From 722 to 723: p 2 
+From 723 to 724: p 2 
+From 724 to 725: p 3 
+From 725 to 726: p 3 
+From 726 to 727: p 3 
+From 727 to 728: p 3 
+From 728 to 729: p 1 
+From 729 to 730: p 4 
+From 730 to 731: p 4 
+From 731 to 732: p 4 
+From 732 to 733: p 4 
+From 733 to 734: p 4 
+From 734 to 735: p 4 
+From 735 to 736: p 2 
+From 736 to 737: p 1 
+From 737 to 738: p 2 
+From 738 to 739: p 2 
+ From 739 to 740: Empty slot 
+From 740 to 741: p 3 
+From 741 to 742: p 3 
+From 742 to 743: p 3 
+From 743 to 744: p 3 
+From 744 to 745: p 1 
+ From 745 to 746: Empty slot 
+ From 746 to 747: Empty slot 
+ From 747 to 748: Empty slot 
+From 748 to 749: p 4 
+From 749 to 750: p 4 
+From 750 to 751: p 2 
+From 751 to 752: p 2 
+From 752 to 753: p 1 
+From 753 to 754: p 2 
+From 754 to 755: p 4 
+From 755 to 756: p 4 
+From 756 to 757: p 4 
+From 757 to 758: p 4 
+ From 758 to 759: Empty slot 
+ From 759 to 760: Empty slot 
+From 760 to 761: p 1 
+From 761 to 762: p 3 
+From 762 to 763: p 3 
+From 763 to 764: p 3 
+From 764 to 765: p 3 
+From 765 to 766: p 2 
+From 766 to 767: p 2 
+From 767 to 768: p 2 
+From 768 to 769: p 1 
+ From 769 to 770: Empty slot 
+From 770 to 771: p 4 
+From 771 to 772: p 4 
+From 772 to 773: p 4 
+From 773 to 774: p 4 
+From 774 to 775: p 4 
+From 775 to 776: p 4 
+From 776 to 777: p 1 
+ From 777 to 778: Empty slot 
+ From 778 to 779: Empty slot 
+ From 779 to 780: Empty slot 
+From 780 to 781: p 2 
+From 781 to 782: p 2 
+From 782 to 783: p 2 
+From 783 to 784: p 3 
+From 784 to 785: p 1 
+From 785 to 786: p 3 
+From 786 to 787: p 3 
+From 787 to 788: p 3 
+ From 788 to 789: Empty slot 
+ From 789 to 790: Empty slot 
+ From 790 to 791: Empty slot 
+ From 791 to 792: Empty slot 
+From 792 to 793: p 1 
+From 793 to 794: p 4 
+From 794 to 795: p 4 
+From 795 to 796: p 2 
+From 796 to 797: p 2 
+From 797 to 798: p 2 
+From 798 to 799: p 4 
+From 799 to 800: p 4 
+From 800 to 801: p 1 
+From 801 to 802: p 3 
+From 802 to 803: p 3 
+From 803 to 804: p 3 
+From 804 to 805: p 3 
+From 805 to 806: p 4 
+From 806 to 807: p 4 
+ From 807 to 808: Empty slot 
+From 808 to 809: p 1 
+ From 809 to 810: Empty slot 
+From 810 to 811: p 2 
+From 811 to 812: p 2 
+From 812 to 813: p 2 
+ From 813 to 814: Empty slot 
+From 814 to 815: p 4 
+From 815 to 816: p 4 
+From 816 to 817: p 1 
+From 817 to 818: p 4 
+From 818 to 819: p 4 
+From 819 to 820: p 4 
+From 820 to 821: p 3 
+From 821 to 822: p 3 
+From 822 to 823: p 3 
+From 823 to 824: p 3 
+From 824 to 825: p 1 
+From 825 to 826: p 2 
+From 826 to 827: p 2 
+From 827 to 828: p 2 
+From 828 to 829: p 4 
+ From 829 to 830: Empty slot 
+ From 830 to 831: Empty slot 
+ From 831 to 832: Empty slot 
+From 832 to 833: p 1 
+ From 833 to 834: Empty slot 
+ From 834 to 835: Empty slot 
+ From 835 to 836: Empty slot 
+From 836 to 837: p 4 
+From 837 to 838: p 4 
+From 838 to 839: p 4 
+From 839 to 840: p 4 
+From 840 to 841: p 1 
+From 841 to 842: p 2 
+From 842 to 843: p 2 
+From 843 to 844: p 2 
+From 844 to 845: p 3 
+From 845 to 846: p 3 
+From 846 to 847: p 3 
+From 847 to 848: p 3 
+From 848 to 849: p 1 
+From 849 to 850: p 4 
+From 850 to 851: p 4 
+ From 851 to 852: Empty slot 
+ From 852 to 853: Empty slot 
+ From 853 to 854: Empty slot 
+ From 854 to 855: Empty slot 
+From 855 to 856: p 2 
+From 856 to 857: p 1 
+From 857 to 858: p 2 
+From 858 to 859: p 2 
+From 859 to 860: p 4 
+From 860 to 861: p 3 
+From 861 to 862: p 3 
+From 862 to 863: p 3 
+From 863 to 864: p 3 
+From 864 to 865: p 1 
+From 865 to 866: p 4 
+From 866 to 867: p 4 
+From 867 to 868: p 4 
+From 868 to 869: p 4 
+From 869 to 870: p 4 
+From 870 to 871: p 2 
+From 871 to 872: p 2 
+From 872 to 873: p 1 
+From 873 to 874: p 2 
+ From 874 to 875: Empty slot 
+ From 875 to 876: Empty slot 
+ From 876 to 877: Empty slot 
+ From 877 to 878: Empty slot 
+ From 878 to 879: Empty slot 
+ From 879 to 880: Empty slot 
+From 880 to 881: p 1 
+From 881 to 882: p 3 
+From 882 to 883: p 3 
+From 883 to 884: p 3 
+From 884 to 885: p 3 
+From 885 to 886: p 2 
+From 886 to 887: p 2 
+From 887 to 888: p 2 
+From 888 to 889: p 1 
+From 889 to 890: p 4 
+From 890 to 891: p 4 
+From 891 to 892: p 4 
+From 892 to 893: p 4 
+From 893 to 894: p 4 
+From 894 to 895: p 4 
+ From 895 to 896: Empty slot 
+From 896 to 897: p 1 
+ From 897 to 898: Empty slot 
+ From 898 to 899: Empty slot 
+ From 899 to 900: Empty slot 
+From 900 to 901: p 2 
+From 901 to 902: p 2 
+From 902 to 903: p 2 
+From 903 to 904: p 3 
+From 904 to 905: p 1 
+From 905 to 906: p 3 
+From 906 to 907: p 3 
+From 907 to 908: p 3 
+From 908 to 909: p 4 
+From 909 to 910: p 4 
+From 910 to 911: p 4 
+From 911 to 912: p 4 
+From 912 to 913: p 1 
+From 913 to 914: p 4 
+From 914 to 915: p 4 
+From 915 to 916: p 2 
+From 916 to 917: p 2 
+From 917 to 918: p 2 
+ From 918 to 919: Empty slot 
+ From 919 to 920: Empty slot 
+From 920 to 921: p 1 
+From 921 to 922: p 3 
+From 922 to 923: p 3 
+From 923 to 924: p 3 
+From 924 to 925: p 3 
+From 925 to 926: p 4 
+From 926 to 927: p 4 
+From 927 to 928: p 4 
+From 928 to 929: p 1 
+From 929 to 930: p 4 
+From 930 to 931: p 2 
+From 931 to 932: p 2 
+From 932 to 933: p 2 
+From 933 to 934: p 4 
+From 934 to 935: p 4 
+ From 935 to 936: Empty slot 
+From 936 to 937: p 1 
+ From 937 to 938: Empty slot 
+ From 938 to 939: Empty slot 
+ From 939 to 940: Empty slot 
+From 940 to 941: p 3 
+From 941 to 942: p 3 
+From 942 to 943: p 3 
+From 943 to 944: p 3 
+From 944 to 945: p 1 
+From 945 to 946: p 2 
+From 946 to 947: p 2 
+From 947 to 948: p 2 
+From 948 to 949: p 4 
+From 949 to 950: p 4 
+From 950 to 951: p 4 
+From 951 to 952: p 4 
+From 952 to 953: p 1 
+From 953 to 954: p 4 
+From 954 to 955: p 4 
+ From 955 to 956: Empty slot 
+ From 956 to 957: Empty slot 
+ From 957 to 958: Empty slot 
+ From 958 to 959: Empty slot 
+ From 959 to 960: Empty slot 
+From 960 to 961: p 1 
+From 961 to 962: p 2 
+From 962 to 963: p 2 
+From 963 to 964: p 2 
+From 964 to 965: p 3 
+From 965 to 966: p 3 
+From 966 to 967: p 3 
+From 967 to 968: p 3 
+From 968 to 969: p 1 
+From 969 to 970: p 4 
+From 970 to 971: p 4 
+From 971 to 972: p 4 
+From 972 to 973: p 4 
+From 973 to 974: p 4 
+From 974 to 975: p 4 
+From 975 to 976: p 2 
+From 976 to 977: p 1 
+From 977 to 978: p 2 
+From 978 to 979: p 2 
+ From 979 to 980: Empty slot 
+From 980 to 981: p 3 
+From 981 to 982: p 3 
+From 982 to 983: p 3 
+From 983 to 984: p 3 
+From 984 to 985: p 1 
+ From 985 to 986: Empty slot 
+ From 986 to 987: Empty slot 
+ From 987 to 988: Empty slot 
+ From 988 to 989: Empty slot 
+ From 989 to 990: Empty slot 
+From 990 to 991: p 2 
+From 991 to 992: p 2 
+From 992 to 993: p 1 
+From 993 to 994: p 2 
+From 994 to 995: p 4 
+From 995 to 996: p 4 
+From 996 to 997: p 4 
+From 997 to 998: p 4 
+From 998 to 999: p 4 
+From 999 to 1000: p 4 
+From 1000 to 1001: p 1 
+From 1001 to 1002: p 3 
+From 1002 to 1003: p 3 
+From 1003 to 1004: p 3 
+From 1004 to 1005: p 3 
+From 1005 to 1006: p 2 
+From 1006 to 1007: p 2 
+From 1007 to 1008: p 2 
+From 1008 to 1009: p 1 
+ From 1009 to 1010: Empty slot 
+ From 1010 to 1011: Empty slot 
+ From 1011 to 1012: Empty slot 
+From 1012 to 1013: p 4 
+From 1013 to 1014: p 4 
+From 1014 to 1015: p 4 
+From 1015 to 1016: p 4 
+From 1016 to 1017: p 1 
+From 1017 to 1018: p 4 
+From 1018 to 1019: p 4 
+ From 1019 to 1020: Empty slot 
+From 1020 to 1021: p 2 
+From 1021 to 1022: p 2 
+From 1022 to 1023: p 2 
+From 1023 to 1024: p 3 
+From 1024 to 1025: p 1 
+From 1025 to 1026: p 3 
+From 1026 to 1027: p 3 
+From 1027 to 1028: p 3 
+ From 1028 to 1029: Empty slot 
+ From 1029 to 1030: Empty slot 
+ From 1030 to 1031: Empty slot 
+ From 1031 to 1032: Empty slot 
+From 1032 to 1033: p 1 
+ From 1033 to 1034: Empty slot 
+From 1034 to 1035: p 4 
+From 1035 to 1036: p 2 
+From 1036 to 1037: p 2 
+From 1037 to 1038: p 2 
+From 1038 to 1039: p 4 
+From 1039 to 1040: p 4 
+From 1040 to 1041: p 1 
+From 1041 to 1042: p 3 
+From 1042 to 1043: p 3 
+From 1043 to 1044: p 3 
+From 1044 to 1045: p 3 
+From 1045 to 1046: p 4 
+From 1046 to 1047: p 4 
+From 1047 to 1048: p 4 
+From 1048 to 1049: p 1 
+ From 1049 to 1050: Empty slot 
+From 1050 to 1051: p 2 
+From 1051 to 1052: p 2 
+From 1052 to 1053: p 2 
+ From 1053 to 1054: Empty slot 
+ From 1054 to 1055: Empty slot 
+ From 1055 to 1056: Empty slot 
+From 1056 to 1057: p 1 
+From 1057 to 1058: p 4 
+From 1058 to 1059: p 4 
+From 1059 to 1060: p 4 
+From 1060 to 1061: p 3 
+From 1061 to 1062: p 3 
+From 1062 to 1063: p 3 
+From 1063 to 1064: p 3 
+From 1064 to 1065: p 1 
+From 1065 to 1066: p 2 
+From 1066 to 1067: p 2 
+From 1067 to 1068: p 2 
+From 1068 to 1069: p 4 
+From 1069 to 1070: p 4 
+From 1070 to 1071: p 4 
+ From 1071 to 1072: Empty slot 
+From 1072 to 1073: p 1 
+ From 1073 to 1074: Empty slot 
+ From 1074 to 1075: Empty slot 
+ From 1075 to 1076: Empty slot 
+ From 1076 to 1077: Empty slot 
+ From 1077 to 1078: Empty slot 
+From 1078 to 1079: p 4 
+From 1079 to 1080: p 4 
+From 1080 to 1081: p 1 
+From 1081 to 1082: p 2 
+From 1082 to 1083: p 2 
+From 1083 to 1084: p 2 
+From 1084 to 1085: p 3 
+From 1085 to 1086: p 3 
+From 1086 to 1087: p 3 
+From 1087 to 1088: p 3 
+From 1088 to 1089: p 1 
+From 1089 to 1090: p 4 
+From 1090 to 1091: p 4 
+From 1091 to 1092: p 4 
+From 1092 to 1093: p 4 
+ From 1093 to 1094: Empty slot 
+ From 1094 to 1095: Empty slot 
+From 1095 to 1096: p 2 
+From 1096 to 1097: p 1 
+From 1097 to 1098: p 2 
+From 1098 to 1099: p 2 
+ From 1099 to 1100: Empty slot 
+From 1100 to 1101: p 3 
+From 1101 to 1102: p 3 
+From 1102 to 1103: p 3 
+From 1103 to 1104: p 3 
+From 1104 to 1105: p 1 
+From 1105 to 1106: p 4 
+From 1106 to 1107: p 4 
+From 1107 to 1108: p 4 
+From 1108 to 1109: p 4 
+From 1109 to 1110: p 4 
+From 1110 to 1111: p 2 
+From 1111 to 1112: p 2 
+From 1112 to 1113: p 1 
+From 1113 to 1114: p 2 
+From 1114 to 1115: p 4 
+ From 1115 to 1116: Empty slot 
+ From 1116 to 1117: Empty slot 
+ From 1117 to 1118: Empty slot 
+ From 1118 to 1119: Empty slot 
+ From 1119 to 1120: Empty slot 
+From 1120 to 1121: p 1 
+From 1121 to 1122: p 3 
+From 1122 to 1123: p 3 
+From 1123 to 1124: p 3 
+From 1124 to 1125: p 3 
+From 1125 to 1126: p 2 
+From 1126 to 1127: p 2 
+From 1127 to 1128: p 2 
+From 1128 to 1129: p 1 
+From 1129 to 1130: p 4 
+From 1130 to 1131: p 4 
+From 1131 to 1132: p 4 
+From 1132 to 1133: p 4 
+From 1133 to 1134: p 4 
+From 1134 to 1135: p 4 
+ From 1135 to 1136: Empty slot 
+From 1136 to 1137: p 1 
+ From 1137 to 1138: Empty slot 
+ From 1138 to 1139: Empty slot 
+ From 1139 to 1140: Empty slot 
+From 1140 to 1141: p 2 
+From 1141 to 1142: p 2 
+From 1142 to 1143: p 2 
+From 1143 to 1144: p 3 
+From 1144 to 1145: p 1 
+From 1145 to 1146: p 3 
+From 1146 to 1147: p 3 
+From 1147 to 1148: p 3 
+From 1148 to 1149: p 4 
+From 1149 to 1150: p 4 
+From 1150 to 1151: p 4 
+From 1151 to 1152: p 4 
+From 1152 to 1153: p 1 
+From 1153 to 1154: p 4 
+From 1154 to 1155: p 4 
+From 1155 to 1156: p 2 
+From 1156 to 1157: p 2 
+From 1157 to 1158: p 2 
+ From 1158 to 1159: Empty slot 
+ From 1159 to 1160: Empty slot 
+From 1160 to 1161: p 1 
+From 1161 to 1162: p 3 
+From 1162 to 1163: p 3 
+From 1163 to 1164: p 3 
+From 1164 to 1165: p 3 
+ From 1165 to 1166: Empty slot 
+From 1166 to 1167: p 4 
+From 1167 to 1168: p 4 
+From 1168 to 1169: p 1 
+From 1169 to 1170: p 4 
+From 1170 to 1171: p 2 
+From 1171 to 1172: p 2 
+From 1172 to 1173: p 2 
+From 1173 to 1174: p 4 
+From 1174 to 1175: p 4 
+From 1175 to 1176: p 4 
+From 1176 to 1177: p 1 
+ From 1177 to 1178: Empty slot 
+ From 1178 to 1179: Empty slot 
+ From 1179 to 1180: Empty slot 
+From 1180 to 1181: p 3 
+From 1181 to 1182: p 3 
+From 1182 to 1183: p 3 
+From 1183 to 1184: p 3 
+From 1184 to 1185: p 1 
+From 1185 to 1186: p 2 
+From 1186 to 1187: p 2 
+From 1187 to 1188: p 2 
+From 1188 to 1189: p 4 
+From 1189 to 1190: p 4 
+From 1190 to 1191: p 4 
+From 1191 to 1192: p 4 
+From 1192 to 1193: p 1 
+From 1193 to 1194: p 4 
+From 1194 to 1195: p 4 
+ From 1195 to 1196: Empty slot 
+ From 1196 to 1197: Empty slot 
+ From 1197 to 1198: Empty slot 
+ From 1198 to 1199: Empty slot 
+ From 1199 to 1200: Empty slot 
+From 1200 to 1201: p 1 
+From 1201 to 1202: p 2 
+From 1202 to 1203: p 2 
+From 1203 to 1204: p 2 
+From 1204 to 1205: p 3 
+From 1205 to 1206: p 3 
+From 1206 to 1207: p 3 
+From 1207 to 1208: p 3 
+From 1208 to 1209: p 1 
+ From 1209 to 1210: Empty slot 
+From 1210 to 1211: p 4 
+From 1211 to 1212: p 4 
+From 1212 to 1213: p 4 
+From 1213 to 1214: p 4 
+From 1214 to 1215: p 4 
+From 1215 to 1216: p 2 
+From 1216 to 1217: p 1 
+From 1217 to 1218: p 2 
+From 1218 to 1219: p 2 
+From 1219 to 1220: p 4 
+From 1220 to 1221: p 3 
+From 1221 to 1222: p 3 
+From 1222 to 1223: p 3 
+From 1223 to 1224: p 3 
+From 1224 to 1225: p 1 
+ From 1225 to 1226: Empty slot 
+ From 1226 to 1227: Empty slot 
+ From 1227 to 1228: Empty slot 
+ From 1228 to 1229: Empty slot 
+ From 1229 to 1230: Empty slot 
+From 1230 to 1231: p 2 
+From 1231 to 1232: p 2 
+From 1232 to 1233: p 1 
+From 1233 to 1234: p 2 
+From 1234 to 1235: p 4 
+From 1235 to 1236: p 4 
+From 1236 to 1237: p 4 
+From 1237 to 1238: p 4 
+From 1238 to 1239: p 4 
+From 1239 to 1240: p 4 
+From 1240 to 1241: p 1 
+From 1241 to 1242: p 3 
+From 1242 to 1243: p 3 
+From 1243 to 1244: p 3 
+From 1244 to 1245: p 3 
+From 1245 to 1246: p 2 
+From 1246 to 1247: p 2 
+From 1247 to 1248: p 2 
+From 1248 to 1249: p 1 
+ From 1249 to 1250: Empty slot 
+ From 1250 to 1251: Empty slot 
+ From 1251 to 1252: Empty slot 
+ From 1252 to 1253: Empty slot 
+ From 1253 to 1254: Empty slot 
+From 1254 to 1255: p 4 
+From 1255 to 1256: p 4 
+From 1256 to 1257: p 1 
+From 1257 to 1258: p 4 
+From 1258 to 1259: p 4 
+From 1259 to 1260: p 4 
+From 1260 to 1261: p 2 
+From 1261 to 1262: p 2 
+From 1262 to 1263: p 2 
+From 1263 to 1264: p 3 
+From 1264 to 1265: p 1 
+From 1265 to 1266: p 3 
+From 1266 to 1267: p 3 
+From 1267 to 1268: p 3 
+From 1268 to 1269: p 4 
+ From 1269 to 1270: Empty slot 
+ From 1270 to 1271: Empty slot 
+ From 1271 to 1272: Empty slot 
+From 1272 to 1273: p 1 
+ From 1273 to 1274: Empty slot 
+ From 1274 to 1275: Empty slot 
+From 1275 to 1276: p 2 
+From 1276 to 1277: p 2 
+From 1277 to 1278: p 2 
+From 1278 to 1279: p 4 
+From 1279 to 1280: p 4 
+From 1280 to 1281: p 1 
+From 1281 to 1282: p 3 
+From 1282 to 1283: p 3 
+From 1283 to 1284: p 3 
+From 1284 to 1285: p 3 
+From 1285 to 1286: p 4 
+From 1286 to 1287: p 4 
+From 1287 to 1288: p 4 
+From 1288 to 1289: p 1 
+From 1289 to 1290: p 4 
+From 1290 to 1291: p 2 
+From 1291 to 1292: p 2 
+From 1292 to 1293: p 2 
+ From 1293 to 1294: Empty slot 
+ From 1294 to 1295: Empty slot 
+ From 1295 to 1296: Empty slot 
+From 1296 to 1297: p 1 
+ From 1297 to 1298: Empty slot 
+From 1298 to 1299: p 4 
+From 1299 to 1300: p 4 
+From 1300 to 1301: p 3 
+From 1301 to 1302: p 3 
+From 1302 to 1303: p 3 
+From 1303 to 1304: p 3 
+From 1304 to 1305: p 1 
+From 1305 to 1306: p 2 
+From 1306 to 1307: p 2 
+From 1307 to 1308: p 2 
+From 1308 to 1309: p 4 
+From 1309 to 1310: p 4 
+From 1310 to 1311: p 4 
+From 1311 to 1312: p 4 
+From 1312 to 1313: p 1 
+ From 1313 to 1314: Empty slot 
+ From 1314 to 1315: Empty slot 
+ From 1315 to 1316: Empty slot 
+ From 1316 to 1317: Empty slot 
+ From 1317 to 1318: Empty slot 
+ From 1318 to 1319: Empty slot 
+ From 1319 to 1320: Empty slot 
 RATE MONOTONIC SCHEDULING: ENDn
 
 
