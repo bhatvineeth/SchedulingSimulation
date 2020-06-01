@@ -258,6 +258,13 @@
         x[0].innerHTML = (table.rows.length-1).toString();
      };
 
+     function chooseGraph(chartID, canvasID) {
+
+            document.getElementById(canvasID).innerHTML = "<canvas id=\"" + chartID + "\" height=\"100\"> </canvas>";
+
+	};
+
+
      function addRowRefresh(row) {
          var new_name = row[0];
          var arrival_time=row[4];
