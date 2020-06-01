@@ -118,6 +118,7 @@
              labels: axisLabel,
              datasets: dataSet
          };
+
         var ctx = document.getElementById(canvasID);
         var myChart = new Chart(ctx, {
             type: 'bar',
@@ -136,6 +137,7 @@
                 },
 
                 responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     xAxes: [{
                         stacked: true,
@@ -148,6 +150,8 @@
                 }
             }
         });
+        myChart.canvas.parentNode.style.height = '125px';
+
     };
 
      function createTable(inputArray) {
@@ -220,6 +224,7 @@
                 },
 
                 responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     xAxes: [{
 
@@ -232,6 +237,12 @@
                 }
             }
         });
+        var canvasHeight = 0;
+        for (i = 0; i < noOfTasks ; i++) {
+           canvasHeight = canvasHeight + 125;
+        }
+        canvasHeight = canvasHeight +'px';
+        myChart.canvas.parentNode.style.height = canvasHeight;
      };
 
      function createTable(inputArray) {
