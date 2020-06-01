@@ -104,7 +104,7 @@
             axisLabel.push(i.toString());
         }
         for (i = 0; i < noOfTasks ; i++) {
-            var inputTask = '['+inputArray[i][0] +', '+inputArray[i][1]+', '+ inputArray[i][2]+', '+inputArray[i][3]+']';
+            var inputTask = '['+inputArray[i][1] +', '+inputArray[i][2]+', '+ inputArray[i][3]+', '+inputArray[i][4]+']';
             var temp = {};
             temp['catergoryPercentage'] = 1;
             temp['barPercentage'] = 1.2;
@@ -192,7 +192,7 @@
             axisLabel.push(i.toString());
         }
         for (i = 0; i < noOfTasks ; i++) {
-            var inputTask = '['+inputArray[i][0] +', '+inputArray[i][1]+', '+ inputArray[i][2]+', '+inputArray[i][3]+']';
+            var inputTask = '['+inputArray[i][1] +', '+inputArray[i][2]+', '+ inputArray[i][3]+', '+inputArray[i][4]+']';
             var temp = {};
 
             temp['steppedLine'] = 'steppedLine';
