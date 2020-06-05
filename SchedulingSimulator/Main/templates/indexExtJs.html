@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+<head>
+
+    <script>
+	edfArray = {{ edfArray }}
+	rmsArray = {{ rmsArray }}
+	interval = {{ interval }}
+	noOfTasks = {{ noOfTasks }}
+	algorithmInputArray = {{ algorithmInputArray }}
+	var ri = 1;
+	</script>
+    <script src="{% static 'js/chart.js/dist/Chart.js' %}"></script>
+    <script src="{% static 'js/controller.js' %}"></script>
+	<script src="{% static 'js/core/jquery.min.js' %}"></script>
+	<script src="{% static 'js/core/popper.min.js' %}"></script>
+	<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+	<script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
+	<script src="{% static 'js/plugins/bootstrap-notify.js' %}"></script>
+	<script src="{% static 'js/black-dashboard.min.js' %}"></script>
+	<script src="{% static 'js/line-graph-controller.js' %}"></script>
+	<script src="{% static 'js/bar-graph-controller.js' %}"></script>
+
+</head>
+</html>
