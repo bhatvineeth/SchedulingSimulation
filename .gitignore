@@ -1,0 +1,14 @@
+
+.DS_Store
+SchedulingSimulator/Main/__pycache__/__init__.cpython-37.pyc
+SchedulingSimulator/Main/__pycache__/admin.cpython-37.pyc
+SchedulingSimulator/Main/__pycache__/edf.cpython-37.pyc
+SchedulingSimulator/Main/__pycache__/forms.cpython-37.pyc
+SchedulingSimulator/Main/__pycache__/models.cpython-37.pyc
+SchedulingSimulator/Main/__pycache__/rms.cpython-37.pyc
+SchedulingSimulator/Main/__pycache__/views.cpython-37.pyc
+SchedulingSimulator/Main/migrations/__pycache__/__init__.cpython-37.pyc
+SchedulingSimulator/SchedulingSimulator/__pycache__/__init__.cpython-37.pyc
+SchedulingSimulator/SchedulingSimulator/__pycache__/settings.cpython-37.pyc
+SchedulingSimulator/SchedulingSimulator/__pycache__/urls.cpython-37.pyc
+SchedulingSimulator/SchedulingSimulator/__pycache__/wsgi.cpython-37.pyc
