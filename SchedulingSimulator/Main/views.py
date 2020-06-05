@@ -1,15 +1,11 @@
 import io
 import sys
 
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_protect
 from .forms import UserCreationForm
 from Main import edf, rms
-
-
-from django.template import RequestContext
 
 @csrf_protect
 def openSimulator(request) :
@@ -49,69 +45,6 @@ def openSimulator(request) :
         sys.stdout = old_stdout  # setting the standard output back to console
         return render(request, 'index.html', {'edfArray': [], 'rmsArray': [], 'interval': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
 
-
-
-# Create your views here.
-def submitData(request):
-    print("adasdadad")
-    return render(request, 'index.html', {})
-
-def inputPage(request):
-    form = UserCreationForm()
-    return render(request, 'input.html', {'form': form})
-
-def openIndex(request):
-    return render(request, 'index.html', {})
-
-@csrf_protect
-def submitInput(request):
-    #for printing the console into a variable
-    old_stdout = sys.stdout
-    new_stdout = io.StringIO()
-    sys.stdout = new_stdout
-
-    final_array = request.POST.get('final_array')
-    interval = request.POST.get('interval')
-    noOfTasks = request.POST.get('noOfTasks')
-
-    #splitting the input into desired format
-    algorithmInputArray = arraySplit(final_array)
-
-    #calculating rate monotonic scheduling algorithm
-    rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
-    rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
-
-    #calculate earliest deadline firstscheduling algorithm
-    edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
-
-    #formating the input arrray to send it back to screen
-    algorithmInputArray = returnInputArray(algorithmInputArray)
-
-    #writing standard output to variable
-    outputConsole = new_stdout.getvalue()
-    sys.stdout = old_stdout #setting the standard output back to console
-    return render(request, 'index.html', {'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks, 'algorithmInputArray': algorithmInputArray, 'outputConsole': outputConsole})
-
-# TODO: Stay on same page when form submits
-def get_name(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = UserCreationForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            name = form.cleaned_data['your_name']
-            print(name)
-            return HttpResponseRedirect('/thanks/')
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = UserCreationForm()
-
-    return render(request, 'name.html', {'form': form})
 
 def arraySplit(algorithmInputs):
     algorithmInputs = algorithmInputs[:-1]
