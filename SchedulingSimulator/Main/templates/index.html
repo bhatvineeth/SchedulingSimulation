@@ -192,11 +192,11 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 										<h2 class="card-title">Earliest Deadline First</h2> </div>
 									<div class="col-sm-6">
 										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary btn-simple active" id="2" onclick="chooseGraph('myChart2', 'edfChartArea');createGraph('myChart2', 'Earliest Dead First', edfArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple active" id="2" onclick="chooseGraph('myChart2', 'edfChartArea');createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray)">
 												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span> </label>
-											<label class="btn btn-sm btn-primary btn-simple" id="3" onclick="chooseGraph('myChart2Line', 'edfChartArea');createLineGraph('myChart2Line', 'Earliest Dead First', edfArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple" id="3" onclick="chooseGraph('myChart2Line', 'edfChartArea');createLineGraph('myChart2Line', 'Earliest DeadLine First', edfArray, algorithmInputArray)">
 												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span> <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span> </label>
@@ -272,7 +272,7 @@ createGraph('myChart2','Earliest Dead First',edfArray, algorithmInputArray);
 	<script>
 	createTable(algorithmInputArray);
 	createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray);
-	createGraph('myChart2', 'Earliest Dead First', edfArray, algorithmInputArray);
+	createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray);
 	</script>
 	<script>
 	$(document).ready(function() {

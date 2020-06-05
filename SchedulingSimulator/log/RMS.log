@@ -1,96 +1,20 @@
 RATE MONOTONIC SCHEDULING: START
 
-[[1, 8], [6, 22]]
-Utilization: 0.397727
+[[1, 4], [2, 6]]
+Utilization: 0.583333
 processes are schedulable
 From 0 to 1: p 1 
 From 1 to 2: p 2 
 From 2 to 3: p 2 
-From 3 to 4: p 2 
-From 4 to 5: p 2 
-From 5 to 6: p 2 
+ From 3 to 4: Empty slot 
+From 4 to 5: p 1 
+ From 5 to 6: Empty slot 
 From 6 to 7: p 2 
- From 7 to 8: Empty slot 
+From 7 to 8: p 2 
 From 8 to 9: p 1 
  From 9 to 10: Empty slot 
  From 10 to 11: Empty slot 
  From 11 to 12: Empty slot 
- From 12 to 13: Empty slot 
- From 13 to 14: Empty slot 
- From 14 to 15: Empty slot 
- From 15 to 16: Empty slot 
-From 16 to 17: p 1 
- From 17 to 18: Empty slot 
- From 18 to 19: Empty slot 
- From 19 to 20: Empty slot 
- From 20 to 21: Empty slot 
- From 21 to 22: Empty slot 
-From 22 to 23: p 2 
-From 23 to 24: p 2 
-From 24 to 25: p 1 
-From 25 to 26: p 2 
-From 26 to 27: p 2 
-From 27 to 28: p 2 
-From 28 to 29: p 2 
- From 29 to 30: Empty slot 
- From 30 to 31: Empty slot 
- From 31 to 32: Empty slot 
-From 32 to 33: p 1 
- From 33 to 34: Empty slot 
- From 34 to 35: Empty slot 
- From 35 to 36: Empty slot 
- From 36 to 37: Empty slot 
- From 37 to 38: Empty slot 
- From 38 to 39: Empty slot 
- From 39 to 40: Empty slot 
-From 40 to 41: p 1 
- From 41 to 42: Empty slot 
- From 42 to 43: Empty slot 
- From 43 to 44: Empty slot 
-From 44 to 45: p 2 
-From 45 to 46: p 2 
-From 46 to 47: p 2 
-From 47 to 48: p 2 
-From 48 to 49: p 1 
-From 49 to 50: p 2 
-From 50 to 51: p 2 
- From 51 to 52: Empty slot 
- From 52 to 53: Empty slot 
- From 53 to 54: Empty slot 
- From 54 to 55: Empty slot 
- From 55 to 56: Empty slot 
-From 56 to 57: p 1 
- From 57 to 58: Empty slot 
- From 58 to 59: Empty slot 
- From 59 to 60: Empty slot 
- From 60 to 61: Empty slot 
- From 61 to 62: Empty slot 
- From 62 to 63: Empty slot 
- From 63 to 64: Empty slot 
-From 64 to 65: p 1 
- From 65 to 66: Empty slot 
-From 66 to 67: p 2 
-From 67 to 68: p 2 
-From 68 to 69: p 2 
-From 69 to 70: p 2 
-From 70 to 71: p 2 
-From 71 to 72: p 2 
-From 72 to 73: p 1 
- From 73 to 74: Empty slot 
- From 74 to 75: Empty slot 
- From 75 to 76: Empty slot 
- From 76 to 77: Empty slot 
- From 77 to 78: Empty slot 
- From 78 to 79: Empty slot 
- From 79 to 80: Empty slot 
-From 80 to 81: p 1 
- From 81 to 82: Empty slot 
- From 82 to 83: Empty slot 
- From 83 to 84: Empty slot 
- From 84 to 85: Empty slot 
- From 85 to 86: Empty slot 
- From 86 to 87: Empty slot 
- From 87 to 88: Empty slot 
 RATE MONOTONIC SCHEDULING: ENDn
 
 
