@@ -61,6 +61,7 @@ def rmsInputArrayCreator(algorithmInputs):
         taskArray = []
         taskArray.append(algorithmInput[1])
         taskArray.append(algorithmInput[2])
+        taskArray.append(algorithmInput[4])
         rmsInputArray.append(taskArray)
     return  rmsInputArray
 

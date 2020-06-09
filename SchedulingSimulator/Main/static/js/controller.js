@@ -22,33 +22,9 @@ function addRowRefresh(row) {
     var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='name_row" + table_len + "'>" + new_name + "</td><td id='exec_row" + table_len + "'>" + exec_time + "</td><td id='period_row" + table_len + "'>" + period + "</td><td id='deadline_row" + table_len + "'>" + deadline + "</td><td id='arrival_row" + table_len + "'>" + arrival_time + "</td><td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'><input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'><input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
 }
 
-function createTable(inputArray) {
-    var table = document.getElementById("data_table");
-    var row = 0;
-    var cell = 0;
-    for (row = 0; row < inputArray.length; row++) {
-        addRowRefresh(inputArray[row]);
-        ri = ri + 1;
-    }
-    var lastRow = table.rows.length;
-    var x = table.rows[table.rows.length - 1].cells;
-    x[0].innerHTML = (table.rows.length - 1).toString();
-};
-
 function chooseGraph(chartID, canvasID) {
     document.getElementById(canvasID).innerHTML = "<canvas id=\"" + chartID + "\" height=\"100\"> </canvas>";
 };
-
-function addRowRefresh(row) {
-    var new_name = row[0];
-    var arrival_time = row[4];
-    var exec_time = row[1];
-    var period = row[2];
-    var deadline = row[3];
-    var table = document.getElementById("data_table");
-    var table_len = (table.rows.length) - 1;
-    var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='name_row" + table_len + "'>" + new_name + "</td><td id='exec_row" + table_len + "'>" + exec_time + "</td><td id='period_row" + table_len + "'>" + period + "</td><td id='deadline_row" + table_len + "'>" + deadline + "</td><td id='arrival_row" + table_len + "'>" + arrival_time + "</td><td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'><input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'><input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
-}
 
 function edit_row(no) {
     document.getElementById("edit_button" + no).style.display = "none";

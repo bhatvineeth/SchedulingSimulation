@@ -6,8 +6,10 @@ def printSequence(processes, n, logFile):
     startingPoints = []
     tasksArray = []
     resultArray = []
+    arrivalArray = []
     for i in range(0, n):
         execution.append(processes[i][0])
+        arrivalArray.append(processes[i][2])
     LCM = max((map(lambda x: x[1], processes)))
     while 1:
         ind = 0
@@ -22,11 +24,11 @@ def printSequence(processes, n, logFile):
     for i in range(0, LCM):
         if i != 0:
             for k in range(0, n):
-                if i % processes[k][1] == 0:
+                if abs(i - processes[k][2]) % processes[k][1] == 0:
                     execution[k] = processes[k][0]
         ind = 0
         for j in range(0, n):
-            if execution[j] != 0:
+            if execution[j] != 0 and i >= arrivalArray[j]:
                 execution[j] = execution[j] - 1
                 Result.append(j + 1)
                 ind = 1
