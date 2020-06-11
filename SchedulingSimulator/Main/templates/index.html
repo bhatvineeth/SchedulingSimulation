@@ -129,6 +129,38 @@
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="card card-chart">
+							<div class="card-header ">
+								<div class="row">
+									<div class="col-sm-6 text-left">
+										<h2 class="card-title">First Come First Serve</h2>
+									</div>
+									<div class="col-sm-6">
+										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+											<label class="btn btn-sm btn-primary btn-simple active" id="4" onclick="chooseGraph('myChart3', 'fcfsChartArea');createGraph('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray)">
+												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>  <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-single-02"></i>
+                        </span>
+											</label>
+											<label class="btn btn-sm btn-primary btn-simple" id="5" onclick="chooseGraph('myChart3Line', 'fcfsChartArea');createLineGraph('myChart3Line', 'First Come First Serve', fcfsArray, algorithmInputArray)">
+												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>  <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-gift-2"></i>
+                        </span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="height:50;">
+								<div id="fcfsChartArea">
+									<canvas id="myChart3"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
@@ -152,6 +184,7 @@
 		createTable(algorithmInputArray);
 		createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray);
 		createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray);
+		createGraph('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray);
 	</script>
 </body>
 

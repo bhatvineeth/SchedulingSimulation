@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_protect
 from .forms import UserCreationForm
-from Main import edf, rms
+from Main import edf, rms, fcfs
 
 @csrf_protect
 def openSimulator(request) :
@@ -31,6 +31,10 @@ def openSimulator(request) :
         # calculate earliest deadline first scheduling algorithm
         edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
 
+        # calculate first come first serve scheduling algorithm
+        fcfsInputArray = fcfsInputArrayCreator(algorithmInputArray)
+        fcfsArray = fcfs.firstComeFirstServe(fcfsInputArray)
+
         # formating the input array to send it back to screen
         algorithmInputArray = returnInputArray(algorithmInputArray)
 
@@ -38,12 +42,12 @@ def openSimulator(request) :
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
 
-        return render(request, 'index.html',{'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html',{'fcfsArray': fcfsArray, 'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
     else:
         form = UserCreationForm()
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
-        return render(request, 'index.html', {'edfArray': [], 'rmsArray': [], 'interval': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html', {'fcfsArray': [], 'edfArray': [], 'rmsArray': [], 'interval': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
 
 
 def arraySplit(algorithmInputs):
@@ -64,6 +68,16 @@ def rmsInputArrayCreator(algorithmInputs):
         taskArray.append(algorithmInput[4])
         rmsInputArray.append(taskArray)
     return  rmsInputArray
+
+def fcfsInputArrayCreator(algorithmInputs):
+    fcfsInputArray = []
+    for algorithmInput in algorithmInputs:
+        taskArray = []
+        taskArray.append(algorithmInput[0])
+        taskArray.append(algorithmInput[1])
+        taskArray.append(algorithmInput[4])
+        fcfsInputArray.append(taskArray)
+    return fcfsInputArray
 
 def returnInputArray(algorithmInputArray):
     algorithmInputArray.sort(key=lambda x: x[2])
