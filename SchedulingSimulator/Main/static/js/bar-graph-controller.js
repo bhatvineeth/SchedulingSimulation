@@ -11,6 +11,9 @@ var colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 ];
 
 function createGraph(canvasID, title, schedulingArray, inputArray) {
+    if(schedulingArray.length == 0 ){
+        return;
+    }
     var labels = [];
     var data = generateGraph(schedulingArray);
     var dataSet = [];

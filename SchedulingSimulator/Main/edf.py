@@ -23,6 +23,7 @@ def earliestDeadlineFirstAlgorithm(tasks):
     if u > 1:
         print("The tasks are not feasible", file=logFile)
         print("Processes are not schedulable")
+        print("\n-------------------------------------------------\n")
         return [];
 
     else:

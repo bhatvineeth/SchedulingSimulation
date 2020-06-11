@@ -87,6 +87,7 @@ def findavgTime(processes, n, bt, at):
     resultArray.append(resultTasks)
     print("Average waiting time = %.5f " % (total_wt / n))
     print("Average turn around time = ", total_tat / n)
+    print("\n-------------------------------------------------\n")
     return resultArray
 
 
