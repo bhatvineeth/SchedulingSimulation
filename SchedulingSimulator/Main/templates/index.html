@@ -65,7 +65,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div>
+					<button onclick="toggleAlgorithm('rmsAlgorithm','rmsButton')" id="rmsButton" class="btn btn-sm btn-primary btn-simple active" style="color: green;">RMS</button>
+					<button onclick="toggleAlgorithm('edfAlgorithm','edfButton')" id="edfButton" class="btn btn-sm btn-primary btn-simple active" style="color: green;">EDF</button>
+					<button onclick="toggleAlgorithm('fcfsAlgorithm','fcfsButton')" id="fcfsButton" class="btn btn-sm btn-primary btn-simple active" style="color: green;">FCFS</button>
+				</div>
+				<div class="row" id="rmsAlgorithm" style="display: block">
 					<div class="col-12">
 						<div class="card card-chart">
 							<div class="card-header ">
@@ -97,7 +102,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" id="edfAlgorithm" style="display: block">
 					<div class="col-12">
 						<div class="card card-chart">
 							<div class="card-header ">
@@ -129,7 +134,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" id="fcfsAlgorithm" style="display: block">
 					<div class="col-12">
 						<div class="card card-chart">
 							<div class="card-header ">

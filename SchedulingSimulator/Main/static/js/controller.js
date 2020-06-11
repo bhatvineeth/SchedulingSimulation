@@ -121,3 +121,18 @@ function submitData() {
     document.getElementById("id_noOfTasks").innerHTML = document.getElementById("data_table").rows.length - 2
     document.getElementById("id_noOfTasks").value = document.getElementById("data_table").rows.length - 2
 }
+
+ function toggleAlgorithm(algorithm, btnID)  {
+    var algorithmID = document.getElementById(algorithm);
+    var displaySetting = algorithmID.style.display;
+    var buttonID = document.getElementById(btnID);
+
+    if (displaySetting == 'block') {
+       algorithmID.style.display = 'none';
+       buttonID.style.color = '#465373';
+    }
+    else {
+       algorithmID.style.display = 'block';
+       buttonID.style.color ='green';
+    }
+  }
