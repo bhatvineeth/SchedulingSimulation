@@ -112,7 +112,8 @@ function generateGraph(dataArray) {
 
 }
 
-function next(canvasID, title, schedulingArray, inputArray) {
+function next(canvasID, title, schedulingArray, inputArray, chartID) {
+    chooseGraph(canvasID, chartID); // the arguments will be inverted, i.e canvasID is chart ID and chartID is canvasID
     startAxes = endAxes + 1;
     endAxes = endAxes + 50;
     lcm = schedulingArray[0][schedulingArray[0].length - 1];
@@ -127,7 +128,8 @@ function next(canvasID, title, schedulingArray, inputArray) {
     createGraph(canvasID, title, schedulingArrayCopy, inputArray);
 }
 
-function prev(canvasID, title, schedulingArray, inputArray) {
+function prev(canvasID, title, schedulingArray, inputArray, chartID) {
+    chooseGraph(canvasID, chartID); // the arguments will be inverted, i.e canvasID is chart ID and chartID is canvasID
     startAxes = startAxes - 50;
     if (startAxes < 0) {
         return false;
