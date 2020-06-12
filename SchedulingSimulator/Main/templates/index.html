@@ -80,20 +80,24 @@
 									</div>
 									<div class="col-sm-6">
 										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary btn-simple active" id="0" onclick="chooseGraph('myChart', 'rmsChartArea');createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple active" id="0" onclick="chooseGraph('myChart', 'rmsChartArea','nextPrevBar','nextPrevLine');createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray)">
 												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span>
 											</label>
-											<label class="btn btn-sm btn-primary btn-simple" id="1" onclick="chooseGraph('myChartLine', 'rmsChartArea');createLineGraph('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple" id="1" onclick="chooseGraph('myChartLine', 'rmsChartArea','nextPrevBar','nextPrevLine');createLineGraph('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray)">
 												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span>
 											</label>
-											<button onclick="prev('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="previous round">&#8249;</button>
-											<button onclick="next('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="next round">&#8250;</button>
-
-
+											<div id="nextPrevBar" style="display: block">
+											<button onclick="prevBar('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="previous round" >&#8249;</button>
+											<button onclick="nextBar('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="next round">&#8250;</button>
+											</div>
+											<div id="nextPrevLine" style="display: none">
+												<button onclick="prevLine('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="previous round" >&#8249;</button>
+											<button onclick="nextLine('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="next round">&#8250;</button>
+											</div>
 										</div>
 									</div>
 								</div>

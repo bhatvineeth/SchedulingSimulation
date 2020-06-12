@@ -84,12 +84,6 @@ function generateGraph(dataArray) {
     var timeLineLength = dataArray[0].length;
     var startingPoints = dataArray[0];
     var tasks = dataArray[1];
-    if (lcm == 0) {
-        lcm = dataArray[0][timeLineLength - 1];
-        if (endAxes > lcm) {
-            endAxes = lcm;
-        }
-    }
     var i = 0;
     var j;
     var tasksDataset = new Array(noOfTasks);
@@ -110,36 +104,4 @@ function generateGraph(dataArray) {
     }
     return tasksDataset;
 
-}
-
-function next(canvasID, title, schedulingArray, inputArray, chartID) {
-    chooseGraph(canvasID, chartID); // the arguments will be inverted, i.e canvasID is chart ID and chartID is canvasID
-    startAxes = endAxes + 1;
-    endAxes = endAxes + 50;
-    lcm = schedulingArray[0][schedulingArray[0].length - 1];
-    if (endAxes > lcm) {
-        endAxes = lcm;
-    }
-    var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes, endAxes);
-    var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes, endAxes);
-    var schedulingArrayCopy = [];
-    schedulingArrayCopy[0] = schedulingArrayTimeLineCopy;
-    schedulingArrayCopy[1] = schedulingArrayTaskCopy;
-    createGraph(canvasID, title, schedulingArrayCopy, inputArray);
-}
-
-function prev(canvasID, title, schedulingArray, inputArray, chartID) {
-    chooseGraph(canvasID, chartID); // the arguments will be inverted, i.e canvasID is chart ID and chartID is canvasID
-    startAxes = startAxes - 50;
-    if (startAxes < 0) {
-        return false;
-    }
-    endAxes = startAxes - 1;
-    lcm = schedulingArray[0][schedulingArray[0].length - 1];
-    var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes, endAxes);
-    var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes, endAxes);
-    var schedulingArrayCopy = [];
-    schedulingArrayCopy[0] = schedulingArrayTimeLineCopy;
-    schedulingArrayCopy[1] = schedulingArrayTaskCopy;
-    createGraph(canvasID, title, schedulingArrayCopy, inputArray);
 }

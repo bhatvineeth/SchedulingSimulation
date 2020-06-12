@@ -22,8 +22,26 @@ function addRowRefresh(row) {
     var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='name_row" + table_len + "'>" + new_name + "</td><td id='exec_row" + table_len + "'>" + exec_time + "</td><td id='period_row" + table_len + "'>" + period + "</td><td id='deadline_row" + table_len + "'>" + deadline + "</td><td id='arrival_row" + table_len + "'>" + arrival_time + "</td><td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'><input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'><input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
 }
 
-function chooseGraph(chartID, canvasID) {
+function chooseGraph(chartID, canvasID, nextPrevBar, nextPrevLine) {
+    startAxes = 0;
+    endAxes = 50;
+    lcm = 0;
     document.getElementById(canvasID).innerHTML = "<canvas id=\"" + chartID + "\" height=\"100\"> </canvas>";
+
+    var barId = document.getElementById(nextPrevBar);
+    var lineId = document.getElementById(nextPrevLine);
+    var barDisplaySetting = barId.style.display;
+    var lineDisplaySetting = lineId.style.display;
+
+    if (barDisplaySetting == 'block') {
+       barId.style.display = 'none';
+       lineId.style.display = 'block';
+    }
+    else if (lineDisplaySetting == 'block'){
+       barId.style.display = 'block';
+       lineId.style.display = 'none';
+    }
+
 };
 
 function edit_row(no) {
@@ -135,3 +153,58 @@ function submitData() {
        buttonID.style.color ='green';
     }
   }
+
+function nextLine(canvasID, title, schedulingArray, inputArray, chartID) {
+    if (endAxes >= Math.ceil(schedulingArray[0][schedulingArray[0].length - 1] / 50) * 50) {
+        return false;
+    }
+    createLineGraph(canvasID, title, next(canvasID, title, schedulingArray, inputArray, chartID), inputArray);
+}
+
+function prevLine(canvasID, title, schedulingArray, inputArray, chartID) {
+    if (startAxes - 50 < 0) {
+        return false;
+    }
+    createLineGraph(canvasID, title, prev(canvasID, title, schedulingArray, inputArray, chartID), inputArray);
+}
+
+function nextBar(canvasID, title, schedulingArray, inputArray, chartID) {
+    if (endAxes >= Math.ceil(schedulingArray[0][schedulingArray[0].length - 1] / 50) * 50) {
+        return false;
+    }
+    createGraph(canvasID, title, next(canvasID, title, schedulingArray, inputArray, chartID), inputArray);
+}
+
+function prevBar(canvasID, title, schedulingArray, inputArray, chartID) {
+    if (startAxes - 50 < 0) {
+        return false;
+    }
+    createGraph(canvasID, title, prev(canvasID, title, schedulingArray, inputArray, chartID), inputArray);
+}
+
+function prev(canvasID, title, schedulingArray, inputArray, chartID) {
+    document.getElementById(chartID).innerHTML = "<canvas id=\"" + canvasID + "\" height=\"100\"> </canvas>";
+    endAxes = startAxes;
+    startAxes = startAxes - 50;
+    lcm = schedulingArray[0][schedulingArray[0].length - 1];
+    var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes, endAxes);
+    var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes, endAxes);
+    var schedulingArrayCopy = [];
+    schedulingArrayCopy[0] = schedulingArrayTimeLineCopy;
+    schedulingArrayCopy[1] = schedulingArrayTaskCopy;
+    return schedulingArrayCopy;
+}
+
+function next(canvasID, title, schedulingArray, inputArray, chartID) {
+    document.getElementById(chartID).innerHTML = "<canvas id=\"" + canvasID + "\" height=\"100\"> </canvas>";
+    startAxes = endAxes;
+    endAxes = endAxes + 50;
+    lcm = schedulingArray[0][schedulingArray[0].length - 1];
+    var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes, endAxes);
+    var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes, endAxes);
+    var schedulingArrayCopy = [];
+    schedulingArrayCopy[0] = schedulingArrayTimeLineCopy;
+    schedulingArrayCopy[1] = schedulingArrayTaskCopy;
+    return schedulingArrayCopy;
+}
+

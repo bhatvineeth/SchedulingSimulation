@@ -19,7 +19,7 @@ def openSimulator(request) :
         final_array = request.POST.get('final_array')
         interval = request.POST.get('interval')
         noOfTasks = request.POST.get('noOfTasks')
-        form['interval'].initial = interval
+        #form['interval'].initial = interval
 
         # splitting the input into desired format
         algorithmInputArray = arraySplit(final_array)
@@ -42,12 +42,12 @@ def openSimulator(request) :
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
 
-        return render(request, 'index.html',{'fcfsArray': fcfsArray, 'edfArray': edfArray, 'rmsArray': rmsArray, 'interval': interval, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html',{'fcfsArray': fcfsArray, 'edfArray': edfArray, 'rmsArray': rmsArray, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
     else:
         form = UserCreationForm()
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
-        return render(request, 'index.html', {'fcfsArray': [], 'edfArray': [], 'rmsArray': [], 'interval': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html', {'fcfsArray': [], 'edfArray': [], 'rmsArray': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
 
 
 def arraySplit(algorithmInputs):
