@@ -85,7 +85,6 @@ function add_row() {
     var period = document.getElementById("period").value;
     var deadline = document.getElementById("deadline").value;
     if (arrival_time == '' || exec_time == '' || period == '' || deadline == '') {
-        alert("Empty row is not considered for scheduling")
         return false;
     }
 

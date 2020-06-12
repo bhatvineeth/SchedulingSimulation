@@ -9,6 +9,10 @@ var colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
     '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'
 ];
+var lcm = 0;
+	var startAxes = 0;
+	var endAxes = 50;
+
 
 function createGraph(canvasID, title, schedulingArray, inputArray) {
     if(schedulingArray.length == 0 ){
@@ -20,7 +24,7 @@ function createGraph(canvasID, title, schedulingArray, inputArray) {
     var set = {};
     var i;
     var axisLabel = []
-    for (i = 0; i < lcm; i++) {
+    for (i = startAxes; i < endAxes ; i++) {
         axisLabel.push(i.toString());
     }
     for (i = 0; i < noOfTasks; i++) {
@@ -76,25 +80,21 @@ function createGraph(canvasID, title, schedulingArray, inputArray) {
 
 
 
-
-var lcm = 0;
-
 function generateGraph(dataArray) {
     var timeLineLength = dataArray[0].length;
     var startingPoints = dataArray[0];
     var tasks = dataArray[1];
-    if (interval == 0) {
+    if (lcm == 0) {
         lcm = dataArray[0][timeLineLength - 1];
-    } else {
-        lcm = interval;
-        tasks = tasks.slice(0, lcm + 2);
-        startingPoints = startingPoints.slice(0, lcm + 2);
+        if (endAxes > lcm) {
+            endAxes = lcm;
+        }
     }
     var i = 0;
     var j;
     var tasksDataset = new Array(noOfTasks);
     for (i = 0; i < noOfTasks; i++) {
-        tasksDataset[i] = new Array(lcm).fill(0);
+        tasksDataset[i] = new Array(endAxes - startAxes).fill(0);
     }
     for (i = 0; i < startingPoints.length; i++) {
         var start = startingPoints[i]
@@ -104,10 +104,40 @@ function generateGraph(dataArray) {
         if (taskNo > 0) {
             taskNo = taskNo - 1
             for (j = start; j < end; j++) {
-                tasksDataset[taskNo][j] = 1;
+                tasksDataset[taskNo][j - startingPoints[0]] = 1;
             }
         }
     }
     return tasksDataset;
 
+}
+
+function next(canvasID, title, schedulingArray, inputArray) {
+    startAxes = endAxes + 1;
+    endAxes = endAxes + 50;
+    lcm = schedulingArray[0][schedulingArray[0].length - 1];
+    if (endAxes > lcm) {
+        endAxes = lcm;
+    }
+    var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes, endAxes);
+    var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes, endAxes);
+    var schedulingArrayCopy = [];
+    schedulingArrayCopy[0] = schedulingArrayTimeLineCopy;
+    schedulingArrayCopy[1] = schedulingArrayTaskCopy;
+    createGraph(canvasID, title, schedulingArrayCopy, inputArray);
+}
+
+function prev(canvasID, title, schedulingArray, inputArray) {
+    startAxes = startAxes - 50;
+    if (startAxes < 0) {
+        return false;
+    }
+    endAxes = startAxes - 1;
+    lcm = schedulingArray[0][schedulingArray[0].length - 1];
+    var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes, endAxes);
+    var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes, endAxes);
+    var schedulingArrayCopy = [];
+    schedulingArrayCopy[0] = schedulingArrayTimeLineCopy;
+    schedulingArrayCopy[1] = schedulingArrayTaskCopy;
+    createGraph(canvasID, title, schedulingArrayCopy, inputArray);
 }

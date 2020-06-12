@@ -10,6 +10,10 @@ var colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'
 ];
 
+var lcm = 0;
+	var startAxes = 0;
+	var endAxes = 50;
+
 function createLineGraph(canvasID, title, schedulingArray, inputArray) {
     var labels = [];
     var data = generateLineGraph(schedulingArray);
@@ -75,7 +79,7 @@ function createLineGraph(canvasID, title, schedulingArray, inputArray) {
 };
 
 
-var lcm = 0;
+
 
 function generateLineGraph(dataArray) {
     var timeLineLength = dataArray[0].length;
