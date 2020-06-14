@@ -63,7 +63,11 @@ function createGraph(canvasID, title, schedulingArray, inputArray) {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
+
                 xAxes: [{
+                     ticks: {
+                        fontColor: 'white'
+                    },
                     stacked: true,
                 }],
                 yAxes: [{

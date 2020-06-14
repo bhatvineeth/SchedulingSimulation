@@ -60,7 +60,9 @@ function createLineGraph(canvasID, title, schedulingArray, inputArray) {
             maintainAspectRatio: false,
             scales: {
                 xAxes: [{
-
+                    ticks: {
+                        fontColor: 'white'
+                    }
                 }],
                 yAxes: [{
 

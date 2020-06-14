@@ -67,7 +67,7 @@ body {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #525f7f;
+  color: #ffffff;
   text-align: left;
   background-color: #1e1e2f;
 }
@@ -20449,6 +20449,10 @@ a:hover {
 
 .round {
   border-radius: 50%;
+}
+
+.inputTable{
+    border: grey;
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */

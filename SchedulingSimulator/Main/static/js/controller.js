@@ -208,3 +208,60 @@ function next(canvasID, title, schedulingArray, inputArray, chartID) {
     return schedulingArrayCopy;
 }
 
+function handleFiles(files) {
+      if (window.FileReader) {
+          getAsText(files[0]);
+      } else {
+          alert('FileReader are not supported in this browser.');
+      }
+    }
+
+    function getAsText(fileToRead) {
+      var reader = new FileReader();
+      reader.readAsText(fileToRead);
+      reader.onload = loadHandler;
+      reader.onerror = errorHandler;
+    }
+
+    function loadHandler(event) {
+      var csv = event.target.result;
+      processData(csv);
+    }
+
+    function processData(csv) {
+        var allTextLines = csv.split(/\r\n|\n/);
+        var lines = [];
+        for (var i=0; i<allTextLines.length; i++) {
+            var data = allTextLines[i].split(';');
+            if(data.includes('')){
+                continue;
+            }
+            var tarr = [];
+            for (var j=0; j<data.length; j++) {
+                tarr.push(data[j]);
+            }
+            var new_name = ri;
+            var exec_time = tarr[0];
+            var period = tarr[1];
+            var deadline = tarr[2];
+            var arrival_time = tarr[3];
+
+            var table = document.getElementById("data_table");
+            var table_len = (table.rows.length) - 1;
+            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='name_row" + table_len + "'>" + new_name + "</td><td id='exec_row" + table_len + "'>" + exec_time + "</td><td id='period_row" + table_len + "'>" + period + "</td><td id='deadline_row" + table_len + "'>" + deadline + "</td><td id='arrival_row" + table_len + "'>" + arrival_time + "</td><td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'><input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'><input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
+
+            ri = ri + 1;
+
+            document.getElementById("task").innerHTML = ri;
+            document.getElementById("arrival_time").value = "";
+            document.getElementById("exec_time").value = "";
+            document.getElementById("period").value = "";
+            document.getElementById("deadline").value = "";
+        }
+    }
+
+    function errorHandler(evt) {
+      if(evt.target.error.name == "NotReadableError") {
+          alert("Cannot read file !");
+      }
+    }

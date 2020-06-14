@@ -13,13 +13,15 @@
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="card card-tasks">
+							<form action="" method="post">{% csrf_token %} {{ form }}
 							<div class="card-header ">
 								<h4 class="title d-inline">Input</h4>
+								<input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv" style=" position: relative; left: 450px;">
+								<input type="submit" value="Submit" onclick="submitData()" style=" position: relative; left: 450px;">
 							</div>
 							<div class="card-body ">
 								<div class="table-full-width table-responsive">
-									<form action="" method="post">{% csrf_token %} {{ form }}
-										<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+										<table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1 class="inputTable">
 											<tr>
 												<th>Task</th>
 												<th>Execution Time</th>
@@ -46,10 +48,11 @@
 												</td>
 											</tr>
 										</table>
-										<input type="submit" value="Submit" onclick="submitData()">
-									</form>
+
+
 								</div>
 							</div>
+								</form>
 						</div>
 					</div>
 					<div class="col-lg-4">
@@ -59,7 +62,7 @@
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<p>{{ outputConsole|linebreaksbr }}</p>
+									<p style="color:white">{{ outputConsole|linebreaksbr }}</p>
 								</div>
 							</div>
 						</div>
