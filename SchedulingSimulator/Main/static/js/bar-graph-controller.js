@@ -10,21 +10,21 @@ var colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'
 ];
 var lcm = 0;
-	var startAxes = 0;
-	var endAxes = 50;
+	var startAxes = [0,0,0];
+	var endAxes = [50,50,50];
 
 
-function createGraph(canvasID, title, schedulingArray, inputArray) {
+function createGraph(canvasID, title, schedulingArray, inputArray, arrayIndex) {
     if(schedulingArray.length == 0 ){
         return;
     }
     var labels = [];
-    var data = generateGraph(schedulingArray);
+    var data = generateGraph(schedulingArray, arrayIndex);
     var dataSet = [];
     var set = {};
     var i;
     var axisLabel = []
-    for (i = startAxes; i < endAxes ; i++) {
+    for (i = startAxes[arrayIndex]; i < endAxes[arrayIndex] ; i++) {
         axisLabel.push(i.toString());
     }
     for (i = 0; i < noOfTasks; i++) {
@@ -84,7 +84,7 @@ function createGraph(canvasID, title, schedulingArray, inputArray) {
 
 
 
-function generateGraph(dataArray) {
+function generateGraph(dataArray, arrayIndex) {
     var timeLineLength = dataArray[0].length;
     var startingPoints = dataArray[0];
     var tasks = dataArray[1];
@@ -92,7 +92,7 @@ function generateGraph(dataArray) {
     var j;
     var tasksDataset = new Array(noOfTasks);
     for (i = 0; i < noOfTasks; i++) {
-        tasksDataset[i] = new Array(endAxes - startAxes).fill(0);
+        tasksDataset[i] = new Array(endAxes[arrayIndex] - startAxes[arrayIndex]).fill(0);
     }
     for (i = 0; i < startingPoints.length; i++) {
         var start = startingPoints[i]

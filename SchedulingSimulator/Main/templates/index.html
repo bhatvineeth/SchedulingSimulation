@@ -83,23 +83,23 @@
 									</div>
 									<div class="col-sm-6">
 										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary btn-simple active" id="0" onclick="chooseGraph('myChart', 'rmsChartArea','nextPrevBar','nextPrevLine');createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple active" id="0" onclick="chooseGraph('myChart', 'rmsChartArea','nextPrevBar','nextPrevLine', 0);createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray, 0)">
 												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span>
 											</label>
-											<label class="btn btn-sm btn-primary btn-simple" id="1" onclick="chooseGraph('myChartLine', 'rmsChartArea','nextPrevBar','nextPrevLine');createLineGraph('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple" id="1" onclick="chooseGraph('myChartLine', 'rmsChartArea','nextPrevBar','nextPrevLine', 0);createLineGraph('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray, 0)">
 												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span>
 											</label>
-											<div id="nextPrevBar" style="display: block">
-											<button onclick="prevBar('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="previous round" >&#8249;</button>
-											<button onclick="nextBar('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="next round">&#8250;</button>
+											<div id="nextPrevBar" style="display: block;margin-left:40px;">
+												<button  onclick="prevBar('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea', 0)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextBar('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea', 0)" class="btn-sm btn-white">&#8250;</button>
 											</div>
-											<div id="nextPrevLine" style="display: none">
-												<button onclick="prevLine('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="previous round" >&#8249;</button>
-											<button onclick="nextLine('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea')" class="next round">&#8250;</button>
+											<div id="nextPrevLine" style="display: none;margin-left:40px;">
+												<button  onclick="prevLine('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea', 0)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextLine('myChartLine', 'Rate Monotonic', rmsArray, algorithmInputArray,'rmsChartArea', 0)" class="btn-sm btn-white">&#8250;</button>
 											</div>
 										</div>
 									</div>
@@ -123,16 +123,27 @@
 									</div>
 									<div class="col-sm-6">
 										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary btn-simple active" id="2" onclick="chooseGraph('myChart2', 'edfChartArea');createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple active" id="2" onclick="chooseGraph('myChart2', 'edfChartArea','nextPrevEdfBar','nextPrevEdfLine', 1);createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray, 1)">
 												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span>
 											</label>
-											<label class="btn btn-sm btn-primary btn-simple" id="3" onclick="chooseGraph('myChart2Line', 'edfChartArea');createLineGraph('myChart2Line', 'Earliest DeadLine First', edfArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple" id="3" onclick="chooseGraph('myChart2Line', 'edfChartArea', 'nextPrevEdfBar','nextPrevEdfLine', 1);createLineGraph('myChart2Line', 'Earliest DeadLine First', edfArray, algorithmInputArray, 1)">
 												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span>
 											</label>
+											<div id="nextPrevEdfBar" style="display: block;margin-left:40px;">
+												<button  onclick="prevBar('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray,'edfChartArea', 1)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextBar('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray,'edfChartArea', 1)" class="btn-sm btn-white">&#8250;</button>
+											</div>
+											<div id="nextPrevEdfLine" style="display: none;margin-left:40px;">
+												<button  onclick="prevLine('myChart2Line', 'Earliest DeadLine First', edfArray, algorithmInputArray,'edfChartArea', 1)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextLine('myChartL2ine', 'Earliest DeadLine First', edfArray, algorithmInputArray,'edfChartArea', 1)" class="btn-sm btn-white">&#8250;</button>
+											</div>
+
+
+
 										</div>
 									</div>
 								</div>
@@ -155,16 +166,26 @@
 									</div>
 									<div class="col-sm-6">
 										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary btn-simple active" id="4" onclick="chooseGraph('myChart3', 'fcfsChartArea');createGraph('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple active" id="4" onclick="chooseGraph('myChart3', 'fcfsChartArea', 'nextPrevFcfsBar','nextPrevFcfsLine', 2);createGraph('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray, 2)">
 												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-single-02"></i>
                         </span>
 											</label>
-											<label class="btn btn-sm btn-primary btn-simple" id="5" onclick="chooseGraph('myChart3Line', 'fcfsChartArea');createLineGraph('myChart3Line', 'First Come First Serve', fcfsArray, algorithmInputArray)">
+											<label class="btn btn-sm btn-primary btn-simple" id="5" onclick="chooseGraph('myChart3Line', 'fcfsChartArea', 'nextPrevFcfsBar','nextPrevFcfsLine', 2);createLineGraph('myChart3Line', 'First Come First Serve', fcfsArray, algorithmInputArray, 2)">
 												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>  <span class="d-block d-sm-none">
                           <i class="tim-icons icon-gift-2"></i>
                         </span>
 											</label>
+											<div id="nextPrevFcfsBar" style="display: block;margin-left:40px;">
+												<button  onclick="prevBar('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray,'fcfsChartArea', 2)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextBar('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray,'fcfsChartArea', 2)" class="btn-sm btn-white">&#8250;</button>
+											</div>
+											<div id="nextPrevFcfsLine" style="display: none;margin-left:40px;">
+												<button  onclick="prevLine('myChart3Line', 'First Come First Serve', fcfsArray, algorithmInputArray,'fcfsChartArea', 2)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextLine('myChartL3ine', 'First Come First Serve', fcfsArray, algorithmInputArray,'fcfsChartArea', 2)" class="btn-sm btn-white">&#8250;</button>
+											</div>
+
+
 										</div>
 									</div>
 								</div>
@@ -187,8 +208,8 @@
 	</div>
 	<div class="fixed-plugin">
 		<div class="dropdown show-dropdown">
-			<a href="#" data-toggle="dropdown"> <i class="fa fa-cog fa-2x"> </i>
-			</a>
+			<!--<a href="#" data-toggle="dropdown"> <i class="fa fa-cog fa-2x"> </i>
+			</a>-->
 			<ul class="dropdown-menu">
 				<li class="header-title">Background</li>
 				<li class="adjustments-line text-center color-change"> <span class="color-label">LIGHT MODE</span>  <span class="badge light-badge mr-2"></span>  <span class="badge dark-badge ml-2"></span>  <span class="color-label">DARK MODE</span>
@@ -198,9 +219,9 @@
 	</div>
 	<script>
 		createTable(algorithmInputArray);
-		createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray);
-		createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray);
-		createGraph('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray);
+		createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray, 0);
+		createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray, 1);
+		createGraph('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray, 2);
 	</script>
 </body>
 

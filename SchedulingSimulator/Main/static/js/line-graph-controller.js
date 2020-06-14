@@ -14,14 +14,14 @@ var lcm = 0;
 	var startAxes = 0;
 	var endAxes = 50;
 
-function createLineGraph(canvasID, title, schedulingArray, inputArray) {
+function createLineGraph(canvasID, title, schedulingArray, inputArray, arrayIndex) {
     var labels = [];
-    var data = generateLineGraph(schedulingArray);
+    var data = generateLineGraph(schedulingArray , arrayIndex);
     var dataSet = [];
     var set = {};
     var i;
     var axisLabel = []
-    for (i = startAxes; i < endAxes ; i++) {
+    for (i = startAxes[arrayIndex]; i < endAxes[arrayIndex] ; i++) {
         axisLabel.push(i.toString());
     }
     for (i = 0; i < noOfTasks; i++) {
@@ -83,7 +83,7 @@ function createLineGraph(canvasID, title, schedulingArray, inputArray) {
 
 
 
-function generateLineGraph(dataArray) {
+function generateLineGraph(dataArray, arrayIndex) {
     var timeLineLength = dataArray[0].length;
     var startingPoints = dataArray[0];
     var tasks = dataArray[1];
@@ -91,7 +91,7 @@ function generateLineGraph(dataArray) {
     var j;
     var tasksDataset = new Array(noOfTasks);
     for (i = 0; i < noOfTasks; i++) {
-        tasksDataset[i] = new Array(endAxes - startAxes).fill(0);
+        tasksDataset[i] = new Array(endAxes[arrayIndex] - startAxes[arrayIndex]).fill(0);
     }
     for (i = 0; i < startingPoints.length; i++) {
         var start = startingPoints[i]
