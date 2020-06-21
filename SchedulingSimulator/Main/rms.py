@@ -57,7 +57,7 @@ def rateMonotonicScheduling(processes):
     print("Rate Monotonic Scheduling:")
     finalArray = []
     n = len(processes)
-    processes.sort(key=lambda x: x[1])
+    processes.sort(key=lambda x: x[0])
     print(processes, file=logFile)
     print(processes)
     u = 0

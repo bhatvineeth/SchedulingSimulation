@@ -71,38 +71,68 @@ def findavgTime(processes, n, bt, at):
         startingPoints.append(at[i] + wt[i])
         endingPoints.append(compl_time)
         tasks.append(i+1)
-    print("Timeline length =", lcm)
 
-    resultStartingPoints = list(range(lcm+1))
-    resultTasks = [0] * (lcm+1)
-    for i in range(n):
-        start = startingPoints[i]
-        end = endingPoints[i]
-        task = tasks[i]
-        while start < end:
-            resultTasks[start] = task
-            start = start + 1
-    resultArray = []
-    resultArray.append(resultStartingPoints)
-    resultArray.append(resultTasks)
     print("Average waiting time = %.5f " % (total_wt / n))
     print("Average turn around time = ", total_tat / n)
     print("\n-------------------------------------------------\n")
-    return resultArray
+
+
+def fcfsScheduling(processesArray, executionTimeArray, periodArray, arrivalTimeArray, logFile) :
+
+    exec_count = 0
+    stack = []
+    LCM = max((map(lambda x: x[1], processesArray)))
+    while 1:
+        ind = 0
+        for j in range(0, len(processesArray)):
+            if LCM % processesArray[j][1] == 0:
+                ind = ind + 1
+        if ind == len(processesArray):
+            break
+        else:
+            LCM = LCM + 1
+    print("Timeline length =", LCM)
+    resultStartingPoints = list(range(LCM + 1))
+    resultArray = [0] * LCM
+    task = 0
+    for i in range(0,LCM):
+        if i in arrivalTimeArray:
+            stack.extend(k for k, x in enumerate(arrivalTimeArray) if x == i)
+        if exec_count == 0 and len(stack) != 0:
+            task = stack[0]
+            exec_count = executionTimeArray[task]
+            period = periodArray[task]
+            arrivalTimeArray[task] = arrivalTimeArray[task] + period
+            resultArray[i] = task+1
+            exec_count = exec_count - 1
+        elif len(stack) != 0:
+            resultArray[i] = task+1
+            exec_count = exec_count - 1
+
+        if exec_count == 0 and len(stack) != 0:
+            stack.pop(0)
+            task = 0
+    fcfsArray =[]
+    fcfsArray.append(resultStartingPoints)
+    fcfsArray.append(resultArray)
+    print(fcfsArray, file=logFile)
+    return fcfsArray
 
 
 def firstComeFirstServe(processes) :
+    logFile = open("log/RMS.log", "w+")
     print("First Come First Serve:")
     print(processes)
-    processesArray = []
     executionTimeArray = []
     arrivalTimeArray = []
-    resultArray = []
+    periodArray = []
+    processes.sort(key=lambda x: x[0])
     for process in processes:
-        processesArray.append(process[0])
-        executionTimeArray.append(process[1])
+        executionTimeArray.append(process[0])
+        periodArray.append(process[1])
         arrivalTimeArray.append(process[2])
-    resultArray = findavgTime(processesArray, len(processesArray), executionTimeArray,arrivalTimeArray)
+    findavgTime(processes, len(processes), executionTimeArray, arrivalTimeArray)
+    resultArray = fcfsScheduling(processes, executionTimeArray, periodArray, arrivalTimeArray, logFile)
     return resultArray
 
 

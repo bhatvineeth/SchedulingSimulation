@@ -73,14 +73,14 @@ def fcfsInputArrayCreator(algorithmInputs):
     fcfsInputArray = []
     for algorithmInput in algorithmInputs:
         taskArray = []
-        taskArray.append(algorithmInput[0])
         taskArray.append(algorithmInput[1])
+        taskArray.append(algorithmInput[2])
         taskArray.append(algorithmInput[4])
         fcfsInputArray.append(taskArray)
     return fcfsInputArray
 
 def returnInputArray(algorithmInputArray):
-    algorithmInputArray.sort(key=lambda x: x[2])
+    algorithmInputArray.sort(key=lambda x: x[1])
     for inputArray in algorithmInputArray:
         inputArray[1:]
     return algorithmInputArray

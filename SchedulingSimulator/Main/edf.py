@@ -3,7 +3,7 @@ def earliestDeadlineFirstAlgorithm(tasks):
     print("EARLIEST DEADLINE FIRST: START\n", file=logFile)
     print("Earliest Deadline First:")
     n = len(tasks)
-    tasks.sort(key=lambda x: x[2])
+    tasks.sort(key=lambda x: x[1])
     i = 0
     for task in tasks:
         i = i + 1
