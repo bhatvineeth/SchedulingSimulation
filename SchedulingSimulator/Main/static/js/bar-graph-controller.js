@@ -85,6 +85,7 @@ function createGraph(canvasID, title, schedulingArray, inputArray, arrayIndex) {
 
 
 function generateGraph(dataArray, arrayIndex) {
+    var end;
     var timeLineLength = dataArray[0].length;
     var startingPoints = dataArray[0];
     var tasks = dataArray[1];
@@ -96,7 +97,11 @@ function generateGraph(dataArray, arrayIndex) {
     }
     for (i = 0; i < startingPoints.length; i++) {
         var start = startingPoints[i]
-        var end = startingPoints[i + 1]
+        if(startingPoints[i + 1] == undefined){
+            end = end + 1;
+        } else {
+            end = startingPoints[i + 1];
+        }
         var taskNo = tasks[i]
 
         if (taskNo > 0) {
