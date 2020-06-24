@@ -20,21 +20,21 @@ def printSequence(processes, n, logFile):
             break
         else:
             LCM = LCM + 1
-    Result = [0] * LCM
+    Result = []
     for i in range(0, LCM):
         if i != 0:
             for k in range(0, n):
                 if abs(i - processes[k][2]) % processes[k][1] == 0:
                     execution[k] = processes[k][0]
+        ind = 0
         for j in range(0, n):
-            temp = i
-            while execution[j] != 0 and i >= arrivalArray[j]:
-                if (Result[temp] == 0):
-                    execution[j] = execution[j] - 1
-                    Result[temp] = j + 1
-                    temp = temp + 1
-                else:
-                    break
+            if execution[j] != 0 and i >= arrivalArray[j]:
+                execution[j] = execution[j] - 1
+                Result.append(j + 1)
+                ind = 1
+                break
+        if ind == 0:
+            Result.append(-1)
     print("Timeline length: ", LCM)
     for i in range(0, LCM):
         startingPoints.append(i)
