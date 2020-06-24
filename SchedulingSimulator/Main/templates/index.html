@@ -72,6 +72,7 @@
 					<button onclick="toggleAlgorithm('rmsAlgorithm','rmsButton')" id="rmsButton" class="btn btn-sm btn-primary btn-simple active" style="color: green;">RMS</button>
 					<button onclick="toggleAlgorithm('edfAlgorithm','edfButton')" id="edfButton" class="btn btn-sm btn-primary btn-simple active" style="color: green;">EDF</button>
 					<button onclick="toggleAlgorithm('fcfsAlgorithm','fcfsButton')" id="fcfsButton" class="btn btn-sm btn-primary btn-simple active" style="color: green;">FCFS</button>
+					<button onclick="toggleAlgorithm('sjfAlgorithm','sjfButton')" id="sjfButton" class="btn btn-sm btn-primary btn-simple active" style="color: green;">SJF</button>
 				</div>
 				<div class="row" id="rmsAlgorithm" style="display: block">
 					<div class="col-12">
@@ -198,6 +199,46 @@
 						</div>
 					</div>
 				</div>
+				<div class="row" id="sjfAlgorithm" style="display: block">
+					<div class="col-12">
+						<div class="card card-chart">
+							<div class="card-header ">
+								<div class="row">
+									<div class="col-sm-6 text-left">
+										<h2 class="card-title">Shortest Job First</h2>
+									</div>
+									<div class="col-sm-6">
+										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+											<label class="btn btn-sm btn-primary btn-simple active" id="6" onclick="chooseGraph('myChart4', 'sjfChartArea','nextPrevSjfBar','nextPrevSjfLine', 3);createGraph('myChart4', 'Shortest Job First', sjfArray, algorithmInputArray, 3)">
+												<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>  <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-single-02"></i>
+                        </span>
+											</label>
+											<label class="btn btn-sm btn-primary btn-simple" id="7" onclick="chooseGraph('myChart4Line', 'sjfChartArea','nextPrevSjfBar','nextPrevSjfLine', 3);createLineGraph('myChart4Line', 'Shortest Job First', sjfArray, algorithmInputArray, 3)">
+												<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>  <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-gift-2"></i>
+                        </span>
+											</label>
+											<div id="nextPrevSjfBar" style="display: block;margin-left:40px;">
+												<button  onclick="prevBar('myChart4', 'Shortest Job First', sjfArray, algorithmInputArray,'sjfChartArea', 3)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextBar('myChart4', 'Shortest Job First', sjfArray, algorithmInputArray,'sjfChartArea', 3)" class="btn-sm btn-white">&#8250;</button>
+											</div>
+											<div id="nextPrevSjfLine" style="display: none;margin-left:40px;">
+												<button  onclick="prevLine('myChart4Line', 'Shortest Job First', sjfArray, algorithmInputArray,'sjfChartArea', 3)" class="btn-sm btn-white" >&#8249;</button>
+												<button  onclick="nextLine('myChart4Line', 'Shortest Job First', sjfArray, algorithmInputArray,'sjfChartArea', 3)" class="btn-sm btn-white">&#8250;</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div id="sjfChartArea">
+									<canvas id="myChart4"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
@@ -222,6 +263,7 @@
 		createGraph('myChart', 'Rate Monotonic', rmsArray, algorithmInputArray, 0);
 		createGraph('myChart2', 'Earliest DeadLine First', edfArray, algorithmInputArray, 1);
 		createGraph('myChart3', 'First Come First Serve', fcfsArray, algorithmInputArray, 2);
+		createGraph('myChart4', 'Shortest Job First', sjfArray, algorithmInputArray, 3);
 	</script>
 </body>
 

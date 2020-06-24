@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_protect
 from .forms import UserCreationForm
-from Main import edf, rms, fcfs
+from Main import edf, rms, fcfs, sjf
 
 @csrf_protect
 def openSimulator(request) :
@@ -23,7 +23,7 @@ def openSimulator(request) :
 
         # splitting the input into desired format
         algorithmInputArray = arraySplit(final_array)
-
+        print(algorithmInputArray)
         # calculating rate monotonic scheduling algorithm
         rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
         rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
@@ -35,6 +35,10 @@ def openSimulator(request) :
         fcfsInputArray = fcfsInputArrayCreator(algorithmInputArray)
         fcfsArray = fcfs.firstComeFirstServe(fcfsInputArray)
 
+        # calculate shortest job first scheduling algorithm
+        sjfInputArray = fcfsInputArrayCreator(algorithmInputArray)
+        sjfArray = sjf.shortestJobFirst(sjfInputArray)
+
         # formating the input array to send it back to screen
         algorithmInputArray = returnInputArray(algorithmInputArray)
 
@@ -42,12 +46,12 @@ def openSimulator(request) :
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
 
-        return render(request, 'index.html',{'fcfsArray': fcfsArray, 'edfArray': edfArray, 'rmsArray': rmsArray, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html',{'sjfArray': sjfArray, 'fcfsArray': fcfsArray, 'edfArray': edfArray, 'rmsArray': rmsArray, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
     else:
         form = UserCreationForm()
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
-        return render(request, 'index.html', {'fcfsArray': [], 'edfArray': [], 'rmsArray': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html', {'sjfArray': [], 'fcfsArray': [], 'edfArray': [], 'rmsArray': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
 
 
 def arraySplit(algorithmInputs):
