@@ -162,7 +162,7 @@ function nextLine(canvasID, title, schedulingArray, inputArray, chartID, arrayIn
 }
 
 function prevLine(canvasID, title, schedulingArray, inputArray, chartID, arrayIndex) {
-    if (startAxes[arrayIndex] - 50 < 0) {
+    if (startAxes[arrayIndex] - 25 < 0) {
         return false;
     }
     createLineGraph(canvasID, title, prev(canvasID, title, schedulingArray, inputArray, chartID, arrayIndex), inputArray, arrayIndex);
@@ -176,7 +176,7 @@ function nextBar(canvasID, title, schedulingArray, inputArray, chartID, arrayInd
 }
 
 function prevBar(canvasID, title, schedulingArray, inputArray, chartID, arrayIndex) {
-    if (startAxes[arrayIndex] - 50 < 0) {
+    if (startAxes[arrayIndex] - 25 < 0) {
         return false;
     }
     createGraph(canvasID, title, prev(canvasID, title, schedulingArray, inputArray, chartID, arrayIndex), inputArray, arrayIndex);
@@ -184,8 +184,8 @@ function prevBar(canvasID, title, schedulingArray, inputArray, chartID, arrayInd
 
 function prev(canvasID, title, schedulingArray, inputArray, chartID, arrayIndex) {
     document.getElementById(chartID).innerHTML = "<canvas id=\"" + canvasID + "\" height=\"100\"> </canvas>";
-    endAxes[arrayIndex] = startAxes[arrayIndex];
-    startAxes[arrayIndex] = startAxes[arrayIndex] - 50;
+    endAxes[arrayIndex] = endAxes[arrayIndex] - 25;
+    startAxes[arrayIndex] = startAxes[arrayIndex] - 25;
     lcm = schedulingArray[0][schedulingArray[0].length - 1];
     var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes[arrayIndex], endAxes[arrayIndex]);
     var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes[arrayIndex], endAxes[arrayIndex]);
@@ -197,8 +197,8 @@ function prev(canvasID, title, schedulingArray, inputArray, chartID, arrayIndex)
 
 function next(canvasID, title, schedulingArray, inputArray, chartID, arrayIndex) {
     document.getElementById(chartID).innerHTML = "<canvas id=\"" + canvasID + "\" height=\"100\"> </canvas>";
-    startAxes[arrayIndex] = endAxes[arrayIndex];
-    endAxes[arrayIndex] = endAxes[arrayIndex] + 50;
+    startAxes[arrayIndex] = startAxes[arrayIndex] + 25;
+    endAxes[arrayIndex] = endAxes[arrayIndex] + 25;
     lcm = schedulingArray[0][schedulingArray[0].length - 1];
     var schedulingArrayTimeLineCopy = schedulingArray[0].slice(startAxes[arrayIndex], endAxes[arrayIndex]);
     var schedulingArrayTaskCopy = schedulingArray[1].slice(startAxes[arrayIndex], endAxes[arrayIndex]);

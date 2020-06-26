@@ -74,7 +74,6 @@ def findavgTime(processes, n, bt, at):
 
     print("Average waiting time = %.5f " % (total_wt / n))
     print("Average turn around time = ", total_tat / n)
-    print("\n-------------------------------------------------\n")
 
 
 def fcfsScheduling(processesArray, executionTimeArray, periodArray, arrivalTimeArray, logFile) :
@@ -133,6 +132,7 @@ def firstComeFirstServe(processes) :
         arrivalTimeArray.append(process[2])
     findavgTime(processes, len(processes), executionTimeArray, arrivalTimeArray)
     resultArray = fcfsScheduling(processes, executionTimeArray, periodArray, arrivalTimeArray, logFile)
+    print("\n-------------------------------------------------\n")
     return resultArray
 
 

@@ -23,7 +23,6 @@ def openSimulator(request) :
 
         # splitting the input into desired format
         algorithmInputArray = arraySplit(final_array)
-        print(algorithmInputArray)
         # calculating rate monotonic scheduling algorithm
         rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
         rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
