@@ -14559,7 +14559,7 @@ fieldset[disabled] .btn-link.active {
 }
 
 .footer {
-  padding: 24px 0 24px 250px;
+  padding: 0px 0 24px 23px;
 }
 
 .footer [class*="container-"] {
@@ -17810,7 +17810,7 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel>.content {
-  padding: 78px 20px 30px 20px;
+  padding: 45px 20px 30px 20px;
   min-height: calc(100vh - 70px);
 }
 
