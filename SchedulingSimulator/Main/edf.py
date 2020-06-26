@@ -57,8 +57,11 @@ def earliestDeadlineFirstAlgorithm(tasks):
         for i in range(n):
             j = 1
             while 1:
-                if j * tasks[i][2] <= lcm:
-                    instances.append([tasks[i], j * tasks[i][2]])
+                if j == 1:
+                    instances.append([tasks[i], tasks[i][4] + (j * tasks[i][2])])
+                    j += 1
+                elif j * tasks[i][2] <= lcm:
+                    instances.append([tasks[i], instances[len(instances) - 1][1] + tasks[i][2]])
                     j += 1
                 else:
                     break
@@ -93,7 +96,7 @@ def earliestDeadlineFirstAlgorithm(tasks):
 
         while time < lcm:
             for i in range(n):
-                if time > 1 and ((time % tasks[i][2] == 0 and time > tasks[i][4]) or time == tasks[i][4]):
+                if time >= 1 and ((time % (tasks[i][4] + tasks[i][2]) == 0 and time > tasks[i][4]) or time == tasks[i][4]):
                     # print("true ", end='')
                     timeLeft[i] = tasks[i][1]
             anyrun = 0
@@ -143,11 +146,11 @@ def earliestDeadlineFirstAlgorithm(tasks):
                 startingPoints.append(mn)
                 tasksArray.append(timeLine[i - 1])
                 mx = i
-                print(mn, "", mx, "", "[" + str(timeLine[i - 1]) + "]", file=logFile)
+                #print(mn, "", mx, "", "[" + str(timeLine[i - 1]) + "]", file=logFile)
                 mn = i
             if i == lcm - 1:
                 mx = lcm
-                print(mn, "", mx, "", "[" + str(timeLine[i]) + "]", file=logFile)
+                #print(mn, "", mx, "", "[" + str(timeLine[i]) + "]", file=logFile)
                 tasksArray.append(timeLine[i])
                 startingPoints.append(mn)
                 startingPoints.append(mx)
@@ -157,8 +160,9 @@ def earliestDeadlineFirstAlgorithm(tasks):
 
         #for i in range(len(instances)):
         #    print(instances[i])
-        resultArray.append(startingPoints)
-        resultArray.append(tasksArray)
+        resultArray.append(list(range(lcm + 1)))
+        resultArray.append(timeLine)
+        print(resultArray, file=logFile)
         print("EARLIEST DEADLINE FIRST: END\n\n\n", file=logFile)
         print("\n-------------------------------------------------\n")
         return(resultArray)
