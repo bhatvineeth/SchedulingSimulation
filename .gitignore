@@ -14,3 +14,8 @@ SchedulingSimulator/SchedulingSimulator/__pycache__/urls.cpython-37.pyc
 SchedulingSimulator/SchedulingSimulator/__pycache__/wsgi.cpython-37.pyc
 SchedulingSimulator/log/RMS.log
 SchedulingSimulator/log/EDF.log
+*.log
+SchedulingSimulator/Main/__pycache__/fcfs.cpython-37.pyc
+SchedulingSimulator/Main/__pycache__/sjf.cpython-37.pyc
+SchedulingSimulator/log/SJF.log
+SchedulingSimulator/log/RMS.log
