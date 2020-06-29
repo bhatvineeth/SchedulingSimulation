@@ -19,3 +19,5 @@ SchedulingSimulator/Main/__pycache__/fcfs.cpython-37.pyc
 SchedulingSimulator/Main/__pycache__/sjf.cpython-37.pyc
 SchedulingSimulator/log/SJF.log
 SchedulingSimulator/log/RMS.log
+*.log
+SchedulingSimulator/log/SJF.log
