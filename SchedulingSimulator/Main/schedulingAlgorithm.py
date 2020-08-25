@@ -19,11 +19,15 @@ def schedule(algorithmInputArray):
 
 def rmsInputArrayCreator(algorithmInputs):
     rmsInputArray = []
+    algorithmInputs.sort(key=lambda x: x[1])
+    i = 0
     for algorithmInput in algorithmInputs:
         taskArray = []
         taskArray.append(algorithmInput[1])
         taskArray.append(algorithmInput[2])
         taskArray.append(algorithmInput[4])
+        i += 1
+        taskArray.append(i)
         rmsInputArray.append(taskArray)
     return  rmsInputArray
 

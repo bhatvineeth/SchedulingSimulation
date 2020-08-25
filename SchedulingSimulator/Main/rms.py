@@ -30,7 +30,7 @@ def rmsScheduling(processes, n, logFile):
         for j in range(0, n):
             if execution[j] != 0 and i >= arrivalArray[j]:
                 execution[j] = execution[j] - 1
-                Result.append(j + 1)
+                Result.append(processes[j][3])
                 ind = 1
                 break
         if ind == 0:
@@ -57,7 +57,7 @@ def schedule(processes):
     print("Rate Monotonic Scheduling:")
     finalArray = []
     n = len(processes)
-    processes.sort(key=lambda x: x[0])
+    processes.sort(key=lambda x: x[1])
     print(processes, file=logFile)
     print(processes)
     u = 0
@@ -72,38 +72,9 @@ def schedule(processes):
             print("processes are schedulable")
             finalArray = rmsScheduling(processes, n, logFile)
         else:
-            ind = 0
-            ind1 = 0
-            success = 1
-            for k in range(1, n):
-                R = 0
-                for j in range(0, k + 1):
-                    R = R + processes[j][0]
-                R1 = processes[k][0]
-                while (1):
-                    i = k - 1
-                    while (i >= 0):
-                        R1 = R1 + (math.ceil(R / float(processes[i][1]) * processes[i][0]))
-                        i = i - 1
-                    if R1 > processes[k][1]:
-                        ind = 1
-                        ind1 = k
-                        break
-                    if R1 == R:
-                        break
-                    else:
-                        R = R1
-                        R1 = processes[k][0]
-                if ind == 1:
-                    print("Processes are not schedulable since processes% d can't meet deadline" % (ind1), file=logFile)
-                    print("Processes are not schedulable since processes% d can't meet deadline" % (ind1))
-                    print("\n")
-                    success = 0
-                    break
-            if success == 1:
-                print("processes are schedulable", file=logFile)
-                print("Processes are schedulable")
-                finalArray = rmsScheduling(processes, n, logFile)
+            print("Processes are not schedulable since processes can't meet deadline" , file=logFile)
+            print("Processes are not schedulable since processes can't meet deadline")
+            print("\n")
     else:
         print("processes are not schedulable", file=logFile)
         print("Processes are not schedulable")
