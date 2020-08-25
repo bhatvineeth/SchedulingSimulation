@@ -1,7 +1,7 @@
 import math
 
 
-def printSequence(processes, n, logFile):
+def rmsScheduling(processes, n, logFile):
     execution = []
     startingPoints = []
     tasksArray = []
@@ -51,7 +51,7 @@ def printSequence(processes, n, logFile):
     resultArray.append(tasksArray)
     return resultArray
 
-def rateMonotonicScheduling(processes):
+def schedule(processes):
     logFile = open("log/RMS.log", "w+")
     print("RATE MONOTONIC SCHEDULING: START\n", file=logFile)
     print("Rate Monotonic Scheduling:")
@@ -70,7 +70,7 @@ def rateMonotonicScheduling(processes):
         if u <= Ub:
             print("processes are schedulable", file=logFile)
             print("processes are schedulable")
-            finalArray = printSequence(processes, n, logFile)
+            finalArray = rmsScheduling(processes, n, logFile)
         else:
             ind = 0
             ind1 = 0
@@ -103,7 +103,7 @@ def rateMonotonicScheduling(processes):
             if success == 1:
                 print("processes are schedulable", file=logFile)
                 print("Processes are schedulable")
-                finalArray = printSequence(processes, n, logFile)
+                finalArray = rmsScheduling(processes, n, logFile)
     else:
         print("processes are not schedulable", file=logFile)
         print("Processes are not schedulable")

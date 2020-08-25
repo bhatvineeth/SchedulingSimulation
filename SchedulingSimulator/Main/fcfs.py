@@ -118,7 +118,7 @@ def fcfsScheduling(processesArray, executionTimeArray, periodArray, arrivalTimeA
     return fcfsArray
 
 
-def firstComeFirstServe(processes) :
+def schedule(processes) :
     logFile = open("log/RMS.log", "w+")
     print("First Come First Serve:")
     print(processes)

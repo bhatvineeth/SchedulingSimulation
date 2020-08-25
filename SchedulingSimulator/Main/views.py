@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from django.views.decorators.csrf import csrf_protect
 from .forms import UserCreationForm
-from Main import edf, rms, fcfs, sjf
+from Main import schedulingAlgorithm
 
 @csrf_protect
 def openSimulator(request) :
@@ -24,20 +24,7 @@ def openSimulator(request) :
         # splitting the input into desired format
         algorithmInputArray = arraySplit(final_array)
         # calculating rate monotonic scheduling algorithm
-        rmsInputArray = rmsInputArrayCreator(algorithmInputArray)
-        rmsArray = rms.rateMonotonicScheduling(rmsInputArray)
-
-        # calculate earliest deadline first scheduling algorithm
-        edfArray = edf.earliestDeadlineFirstAlgorithm(algorithmInputArray)
-
-        # calculate first come first serve scheduling algorithm
-        fcfsInputArray = fcfsInputArrayCreator(algorithmInputArray)
-        fcfsArray = fcfs.firstComeFirstServe(fcfsInputArray)
-
-        # calculate shortest job first scheduling algorithm
-        sjfInputArray = fcfsInputArrayCreator(algorithmInputArray)
-        sjfArray = sjf.shortestJobFirst(sjfInputArray)
-
+        rmsArray, edfArray, fcfsArray, sjfArray = schedulingAlgorithm.schedule(algorithmInputArray)
         # formating the input array to send it back to screen
         algorithmInputArray = returnInputArray(algorithmInputArray)
 
@@ -61,26 +48,6 @@ def arraySplit(algorithmInputs):
         algorithmInput = algorithmInput[:-1]
         algorithmInputArray.append(list(map(int, algorithmInput.split(",", -1))))
     return algorithmInputArray
-
-def rmsInputArrayCreator(algorithmInputs):
-    rmsInputArray = []
-    for algorithmInput in algorithmInputs:
-        taskArray = []
-        taskArray.append(algorithmInput[1])
-        taskArray.append(algorithmInput[2])
-        taskArray.append(algorithmInput[4])
-        rmsInputArray.append(taskArray)
-    return  rmsInputArray
-
-def fcfsInputArrayCreator(algorithmInputs):
-    fcfsInputArray = []
-    for algorithmInput in algorithmInputs:
-        taskArray = []
-        taskArray.append(algorithmInput[1])
-        taskArray.append(algorithmInput[2])
-        taskArray.append(algorithmInput[4])
-        fcfsInputArray.append(taskArray)
-    return fcfsInputArray
 
 def returnInputArray(algorithmInputArray):
     algorithmInputArray.sort(key=lambda x: x[1])

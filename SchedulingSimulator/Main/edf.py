@@ -1,4 +1,4 @@
-def earliestDeadlineFirstAlgorithm(tasks):
+def schedule(tasks):
     logFile = open("log/EDF.log", "w+")
     print("EARLIEST DEADLINE FIRST: START\n", file=logFile)
     print("Earliest Deadline First:")

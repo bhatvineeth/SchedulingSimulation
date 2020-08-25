@@ -35,7 +35,7 @@ def sjfScheduling(processesArray, executionTimeArray, periodArray, arrivalTimeAr
     print(sjfArray, file=logFile)
     return sjfArray
 
-def shortestJobFirst(processes) :
+def schedule(processes) :
     logFile = open("log/SJF.log", "w+")
     print("Shortest Job First:")
     print(processes)
