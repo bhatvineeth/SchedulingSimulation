@@ -1,4 +1,4 @@
-# SchedulingSimulation
+# Scheduling Simulator
 RTS Project - Simulation of scheduling algorithms
 
 ## Abstract
