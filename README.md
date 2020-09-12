@@ -36,3 +36,6 @@ $ pip3 install django
 $ python manage.py runserver
 ```
 7. Application will be available on localhost:8000.
+
+## Literature
+https://github.com/bhatvineeth/SchedulingSimulation/blob/master/Documentation/Paper/Scheduling_Simulator.pdf
