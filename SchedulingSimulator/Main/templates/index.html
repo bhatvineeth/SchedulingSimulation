@@ -240,6 +240,47 @@
 						</div>
 					</div>
 				</div>
+				<div class="row" id="rrAlgorithm" style="display: block">
+						<div class="col-12">
+							<div class="card card-chart">
+								<div class="card-header ">
+									<div class="row">
+										<div class="col-sm-6 text-left">
+											<h2 class="card-title">Round Robin</h2>
+										</div>
+										<div class="col-sm-6">
+											<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+												<label class="btn btn-sm btn-primary btn-simple active" id="8" onclick="chooseGraph('myChart5', 'rrChartArea','nextPrevRrBar','nextPrevRrLine', 4);createGraph('myChart5', 'Round Robin', rrArray, algorithmInputArray, 4)">
+													<input type="radio" name="options" checked> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Bar Graph</span>  <span class="d-block d-sm-none">
+							  <i class="tim-icons icon-single-02"></i>
+							</span>
+												</label>
+												<label class="btn btn-sm btn-primary btn-simple" id="9" onclick="chooseGraph('myChart5Line', 'rrChartArea','nextPrevRrBar','nextPrevRrLine', 4);createLineGraph('myChart5Line', 'Round Robin', rrArray, algorithmInputArray, 4)">
+													<input type="radio" class="d-none d-sm-none" name="options"> <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Line Graph</span>  <span class="d-block d-sm-none">
+							  <i class="tim-icons icon-gift-2"></i>
+							</span>
+												</label>
+												<div id="nextPrevRrBar" style="display: block;margin-left:40px;">
+													<button  onclick="prevBar('myChart5', 'Round Robin', rrArray, algorithmInputArray,'rrChartArea', 4)" class="btn-sm btn-white" >&#8249;</button>
+													<button  onclick="nextBar('myChart5', 'Round Robin', rrArray, algorithmInputArray,'rrChartArea', 4)" class="btn-sm btn-white">&#8250;</button>
+												</div>
+												<div id="nextPrevRrLine" style="display: none;margin-left:40px;">
+													<button  onclick="prevLine('myChart5Line', 'Round Robin', rrArray, algorithmInputArray,'rrChartArea', 4)" class="btn-sm btn-white" >&#8249;</button>
+													<button  onclick="nextLine('myChart5Line', 'Round Robin', rrArray, algorithmInputArray,'rrChartArea', 4)" class="btn-sm btn-white">&#8250;</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div id="rrChartArea">
+										<canvas id="myChart5"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<footer class="footer">
 
