@@ -24,7 +24,7 @@ def openSimulator(request) :
         # splitting the input into desired format
         algorithmInputArray = arraySplit(final_array)
         # calculating rate monotonic scheduling algorithm
-        rmsArray, edfArray, fcfsArray, sjfArray, rrArray = schedulingAlgorithm.schedule(algorithmInputArray)
+        rmsArray, edfArray, fcfsArray, sjfArray = schedulingAlgorithm.schedule(algorithmInputArray)
         # formating the input array to send it back to screen
         algorithmInputArray = returnInputArray(algorithmInputArray)
 
@@ -32,12 +32,12 @@ def openSimulator(request) :
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
 
-        return render(request, 'index.html',{'rrArray': rrArray, 'sjfArray': sjfArray, 'fcfsArray': fcfsArray, 'edfArray': edfArray, 'rmsArray': rmsArray, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html',{'sjfArray': sjfArray, 'fcfsArray': fcfsArray, 'edfArray': edfArray, 'rmsArray': rmsArray, 'noOfTasks': noOfTasks,'algorithmInputArray': algorithmInputArray, 'form': form, 'outputConsole': outputConsole})
     else:
         form = UserCreationForm()
         outputConsole = new_stdout.getvalue()
         sys.stdout = old_stdout  # setting the standard output back to console
-        return render(request, 'index.html', {'rrArray': [], 'sjfArray': [], 'fcfsArray': [], 'edfArray': [], 'rmsArray': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
+        return render(request, 'index.html', {'sjfArray': [], 'fcfsArray': [], 'edfArray': [], 'rmsArray': [], 'noOfTasks': [],'algorithmInputArray': [], 'form': form, 'outputConsole': outputConsole})
 
 
 def arraySplit(algorithmInputs):

@@ -1,4 +1,4 @@
-from Main import rms, edf, fcfs, sjf, rr
+from Main import rms, edf, fcfs, sjf
 
 
 def schedule(algorithmInputArray):
@@ -15,9 +15,7 @@ def schedule(algorithmInputArray):
     # calculate shortest job first scheduling algorithm
     sjfInputArray = fcfsInputArrayCreator(algorithmInputArray)
     sjfArray = sjf.schedule(sjfInputArray)
-
-    rrArray = rr.schedule(algorithmInputArray)
-    return rmsArray, edfArray, fcfsArray, sjfArray, rrArray
+    return rmsArray, edfArray, fcfsArray, sjfArray
 
 def rmsInputArrayCreator(algorithmInputs):
     rmsInputArray = []
