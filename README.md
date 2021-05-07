@@ -37,6 +37,9 @@ $ python manage.py runserver
 ```
 7. Application will be available on localhost:8000.
 
+## Algorithms
+Algorithms implemented can be found - [here](./Documentation/Algorithms/README.md)
+
 ## Literature
 The research paper can be found - [here](./Documentation/Research-Paper/Scheduling_Simulator.pdf)
 
