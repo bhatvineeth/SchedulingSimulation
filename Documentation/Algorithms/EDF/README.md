@@ -5,6 +5,9 @@ The Earliest Deadline First Scheduling algorithm is one of the fundamental and e
 ## Algorithm
 1. The parameters arrival time, execution time, period are considered as inputs to the algorithm.
 2. Utilization is calculated to verify if the tasks are schedulable or not. The utilization for a task set with **n** number of tasks can be calculated using
+
+    <img src="https://render.githubusercontent.com/render/math?math=U=\sum_{i=1}^n \frac{executionTime[i]}{period[i]}">
+
 3. If the Utilization of a task set *>* 1 (100%), the tasks cannot be scheduled. 
 4. A  counter is maintained for each task which is initialized to the execution time of the task that is being executed, which is decremented as the time progress.
 5. For each time interval starting from 0

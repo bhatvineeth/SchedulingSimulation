@@ -10,6 +10,21 @@ The first come first serve algorithm is one of the most simple scheduling algori
 5. Step 3 and 4 is repeated until the algorithm completes the execution till the LCM.
 6. Waiting time for a process k is calculated using
 
+    waitingTime[k] = executionTime[k-1] + waitingTime[k-1]
+    
+    waitingTime[0] = 0, as the first process never waits, its executed as soon as it arrives.
+7. Average Waiting Time can be calculated using,
+
+    averageWaitingTime = totalWaitingTimeForAllProcesses / numberOfProcesses
+    
+8. The turn around time for a process k is calculated using,
+
+    turnAroundTime[k] = executionTime[k] + waitingTime[k]
+    
+9. Total Turn Around Time is calculated using,
+
+   averageTurnAroundTime = totalTurnAroundTimeForAllProcesses / numberOfProcess
+
 ## Advantages
 - Simplest Scheduling Algorithm.
 - Implementation not complicated.
