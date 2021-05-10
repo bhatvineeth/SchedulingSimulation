@@ -41,6 +41,9 @@ Algorithms implemented can be found - [here](./Documentation/Algorithms/README.m
 ## Literature
 The research paper can be found - [here](./Documentation/Research-Paper/Scheduling_Simulator.pdf)
 
+## Contact Us
+[Slack](https://join.slack.com/t/slack-e714504/shared_invite/zt-qbkybvep-4a8itShMEM27ZRW2gX4PcA) 
+
 ## References
 1. A. S. Pillai and T. B. Isha, "A new real time simulator for task scheduling," 2012 IEEE International Conference on Computational Intelligence and Computing Research, Coimbatore, 2012, pp. 1-4, doi: 10.1109/ICCIC.2012.6510232.
 2. Chart.js https://www.chartjs.org/ Accessed: 22.08.2020
