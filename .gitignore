@@ -21,3 +21,4 @@ SchedulingSimulator/log/SJF.log
 SchedulingSimulator/log/RMS.log
 *.log
 SchedulingSimulator/log/SJF.log
+.idea/workspace.xml
