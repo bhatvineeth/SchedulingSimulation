@@ -54,3 +54,6 @@ The research paper can be found - [here](./Documentation/Research-Paper/Scheduli
 7. Lui Sha, R. Rajkumar and S. S. Sathaye, "Generalized rate-monotonic scheduling theory: a framework for developing real-time systems," in Proceedings of the IEEE, vol. 82, no. 1, pp. 68-82, Jan. 1994, doi: 10.1109/5.259427.
 8. https://www.geeksforgeeks.org/program-for-shortest-job-first-or-sjf-cpu-scheduling-set-1-non-preemptive/
 9. Module 6 Embedded System Software, https://nptel.ac.in/content/storage2/courses/108105057/Pdf/Lesson-30.pdf Accessed: 25.08.2020
+
+## Licensing
+Scheduling Simulation is open source software to be licensed soon. See the folder licenses for information on open source libraries that Scheduling Simulation depends on.
