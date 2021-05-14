@@ -39,3 +39,8 @@ $ python manage.py runserver
 
 ## Literature
 https://github.com/bhatvineeth/SchedulingSimulation/blob/master/Documentation/Paper/Scheduling_Simulator.pdf
+
+
+## Licensing
+
+Scheduling Simulation is open source software to be licensed soon. See the folder licenses for information on open source libraries that Scheduling Simulation depends on.
