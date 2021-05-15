@@ -21,4 +21,6 @@ SchedulingSimulator/log/SJF.log
 SchedulingSimulator/log/RMS.log
 *.log
 SchedulingSimulator/log/SJF.log
+SchedulingSimulator/.vscode/launch.json
+SchedulingSimulator/.vscode/tasks.json
 .idea

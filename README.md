@@ -2,16 +2,49 @@
 
 Understanding the working of scheduling algorithms provides us with a knowledge of how to analyse the scheduling of processes, resource utilization, and performance in real-time applications. Various algorithms perform differently and have their unique set characteristics which are advantageous depending on the scenario and application. A simulator enables us to visualize these characteristics, working, and behaviour of scheduling algorithms. By automating the process of scheduling these tasks provided as input and displaying the output intuitively, which reduces the work on creating the schedule and focuses on analysing the behaviour of the scheduling algorithms. This literature focuses on the development of a web application that is machine and platform-independent, with the scope of illustrating multiple scheduling algorithms graphically to help one to draw comparisons and conclusions based on the results.
 
-## Requirements
-1. [Python 3](https://www.python.org/downloads/)
-2. [pip3](https://pip.pypa.io/en/stable/)
 
-## Deployment
+Application deployment can be done using Docker or by manually setting up the environment and server for django. 
+## Deployment using Docker
+### Requirements
+
+1. [Docker](https://www.docker.com/)
+
+### Deployment 
 
 1. Download the source code using the following command.
 ```bash
 $ git clone https://github.com/bhatvineeth/SchedulingSimulation.git
 ```
+2. Start the docker applciation.
+
+3. Move to the SchedulingSimulator app directory
+```bash
+$ cd SchedulingSimulation\SchedulingSimulator\
+```
+4. Execute the following command to start the environment.
+```bash
+$ docker compose up
+```
+5. Application can be accessed on localhost:8000.
+
+6. To stop the server, hit ctrl + c on the same terminal where the docker is running or execute the following command on root directory of the applciation.
+```bash
+$ docker compose down
+```
+
+## Deployment using virtual env
+### Requirements
+
+1. [Python 3](https://www.python.org/downloads/)
+2. [pip3](https://pip.pypa.io/en/stable/)
+
+### Deployment
+
+1. Download the source code using the following command.
+```bash
+$ git clone https://github.com/bhatvineeth/SchedulingSimulation.git
+```
+
 2. Install virtual environment.
 ```bash
 $ pip3 install virtualenv
